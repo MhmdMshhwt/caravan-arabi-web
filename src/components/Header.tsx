@@ -2,12 +2,13 @@
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { ChevronDown } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [productsDropdownOpen, setProductsDropdownOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,6 +18,12 @@ const Header = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Close mobile menu when route changes
+  useEffect(() => {
+    setMobileMenuOpen(false);
+    setProductsDropdownOpen(false);
+  }, [location]);
 
   const productCategories = [
     { id: "caravans", label: "كرفانات", path: "/products/caravans" },
@@ -28,12 +35,12 @@ const Header = () => {
 
   const navItems = [
     { id: "home", label: "الرئيسية", path: "/" },
-    { id: "about", label: "من نحن", path: "/#about" },
+    { id: "about", label: "من نحن", path: "/about-us" },
     { id: "products", label: "منتجاتنا", path: "/#products", hasDropdown: true },
     { id: "projects", label: "مشاريعنا", path: "/projects" },
-    { id: "gallery", label: "المعرض", path: "/#gallery" },
-    { id: "videos", label: "فيديوهات", path: "/#videos" },
-    { id: "contact", label: "تواصل معنا", path: "/#contact" },
+    { id: "gallery", label: "المعرض", path: "/gallery" },
+    { id: "videos", label: "فيديوهات", path: "/videos" },
+    { id: "contact", label: "تواصل معنا", path: "/contact" },
   ];
 
   return (
@@ -62,7 +69,7 @@ const Header = () => {
                   <div className="relative">
                     <button
                       onClick={() => setProductsDropdownOpen(!productsDropdownOpen)}
-                      className="px-4 py-2 hover-gold font-medium flex items-center"
+                      className="px-4 py-2 hover:text-gold font-medium flex items-center"
                       onMouseEnter={() => setProductsDropdownOpen(true)}
                       onMouseLeave={() => setProductsDropdownOpen(false)}
                     >
@@ -95,7 +102,7 @@ const Header = () => {
                 ) : (
                   <Link
                     to={item.path}
-                    className="px-4 py-2 hover-gold font-medium"
+                    className="px-4 py-2 hover:text-gold font-medium"
                   >
                     {item.label}
                   </Link>
@@ -145,7 +152,7 @@ const Header = () => {
                       <div className="text-center">
                         <button
                           onClick={() => setProductsDropdownOpen(!productsDropdownOpen)}
-                          className="text-xl font-medium hover-gold flex items-center"
+                          className="text-xl font-medium hover:text-gold flex items-center"
                         >
                           {item.label}
                           <ChevronDown size={16} className="mr-1" />
@@ -172,7 +179,7 @@ const Header = () => {
                     ) : (
                       <Link
                         to={item.path}
-                        className="text-xl font-medium hover-gold"
+                        className="text-xl font-medium hover:text-gold"
                         onClick={() => setMobileMenuOpen(false)}
                       >
                         {item.label}
