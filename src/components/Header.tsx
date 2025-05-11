@@ -1,10 +1,13 @@
 
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
+import { ChevronDown } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [productsDropdownOpen, setProductsDropdownOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -14,6 +17,24 @@ const Header = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const productCategories = [
+    { id: "caravans", label: "كرفانات", path: "/products/caravans" },
+    { id: "shelters", label: "ملاجئ", path: "/products/shelters" },
+    { id: "kiosks", label: "أكشاك", path: "/products/kiosks" },
+    { id: "food-trucks", label: "عربات طعام", path: "/products/food-trucks" },
+    { id: "mobile-offices", label: "مكاتب متنقلة", path: "/products/mobile-offices" },
+  ];
+
+  const navItems = [
+    { id: "home", label: "الرئيسية", path: "/" },
+    { id: "about", label: "من نحن", path: "/#about" },
+    { id: "products", label: "منتجاتنا", path: "/#products", hasDropdown: true },
+    { id: "projects", label: "مشاريعنا", path: "/projects" },
+    { id: "gallery", label: "المعرض", path: "/#gallery" },
+    { id: "videos", label: "فيديوهات", path: "/#videos" },
+    { id: "contact", label: "تواصل معنا", path: "/#contact" },
+  ];
 
   return (
     <header
@@ -26,30 +47,59 @@ const Header = () => {
     >
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
         {/* Logo */}
-        <a href="#" className="z-10">
+        <Link to="/" className="z-10">
           <h1 className="text-xl md:text-2xl font-bold text-black">
             <span className="text-gold">ME</span> Caravan
           </h1>
-        </a>
+        </Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:block">
           <ul className="flex space-x-1 space-x-reverse">
-            {[
-              { id: "home", label: "الرئيسية" },
-              { id: "about", label: "من نحن" },
-              { id: "products", label: "منتجاتنا" },
-              { id: "gallery", label: "المعرض" },
-              { id: "videos", label: "فيديوهات" },
-              { id: "contact", label: "تواصل معنا" },
-            ].map((item) => (
-              <li key={item.id}>
-                <a
-                  href={`#${item.id}`}
-                  className="px-4 py-2 hover-gold font-medium"
-                >
-                  {item.label}
-                </a>
+            {navItems.map((item) => (
+              <li key={item.id} className="relative">
+                {item.hasDropdown ? (
+                  <div className="relative">
+                    <button
+                      onClick={() => setProductsDropdownOpen(!productsDropdownOpen)}
+                      className="px-4 py-2 hover-gold font-medium flex items-center"
+                      onMouseEnter={() => setProductsDropdownOpen(true)}
+                      onMouseLeave={() => setProductsDropdownOpen(false)}
+                    >
+                      {item.label}
+                      <ChevronDown size={16} className="mr-1" />
+                    </button>
+                    
+                    {productsDropdownOpen && (
+                      <div 
+                        className="absolute top-full right-0 bg-white shadow-lg rounded-md py-2 min-w-[200px] z-50"
+                        onMouseEnter={() => setProductsDropdownOpen(true)}
+                        onMouseLeave={() => setProductsDropdownOpen(false)}
+                      >
+                        {productCategories.map((category) => (
+                          <Link 
+                            key={category.id} 
+                            to={category.path}
+                            className="block px-4 py-2 hover:bg-gray-100 text-gray-700 hover:text-gold text-right"
+                            onClick={() => {
+                              setProductsDropdownOpen(false);
+                              setMobileMenuOpen(false);
+                            }}
+                          >
+                            {category.label}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                ) : (
+                  <Link
+                    to={item.path}
+                    className="px-4 py-2 hover-gold font-medium"
+                  >
+                    {item.label}
+                  </Link>
+                )}
               </li>
             ))}
           </ul>
@@ -89,22 +139,45 @@ const Header = () => {
           <div className="flex flex-col items-center justify-center h-full">
             <nav>
               <ul className="flex flex-col items-center space-y-6">
-                {[
-                  { id: "home", label: "الرئيسية" },
-                  { id: "about", label: "من نحن" },
-                  { id: "products", label: "منتجاتنا" },
-                  { id: "gallery", label: "المعرض" },
-                  { id: "videos", label: "فيديوهات" },
-                  { id: "contact", label: "تواصل معنا" },
-                ].map((item) => (
-                  <li key={item.id}>
-                    <a
-                      href={`#${item.id}`}
-                      className="text-xl font-medium hover-gold"
-                      onClick={() => setMobileMenuOpen(false)}
-                    >
-                      {item.label}
-                    </a>
+                {navItems.map((item) => (
+                  <li key={item.id} className="relative">
+                    {item.hasDropdown ? (
+                      <div className="text-center">
+                        <button
+                          onClick={() => setProductsDropdownOpen(!productsDropdownOpen)}
+                          className="text-xl font-medium hover-gold flex items-center"
+                        >
+                          {item.label}
+                          <ChevronDown size={16} className="mr-1" />
+                        </button>
+                        
+                        {productsDropdownOpen && (
+                          <div className="mt-2 py-2">
+                            {productCategories.map((category) => (
+                              <Link 
+                                key={category.id} 
+                                to={category.path}
+                                className="block py-2 hover:text-gold text-lg"
+                                onClick={() => {
+                                  setProductsDropdownOpen(false);
+                                  setMobileMenuOpen(false);
+                                }}
+                              >
+                                {category.label}
+                              </Link>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                    ) : (
+                      <Link
+                        to={item.path}
+                        className="text-xl font-medium hover-gold"
+                        onClick={() => setMobileMenuOpen(false)}
+                      >
+                        {item.label}
+                      </Link>
+                    )}
                   </li>
                 ))}
               </ul>

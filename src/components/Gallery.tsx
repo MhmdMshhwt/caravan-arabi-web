@@ -1,6 +1,14 @@
 
 import { useState } from 'react';
 import { cn } from "@/lib/utils";
+import { ChevronRight, ChevronLeft } from "lucide-react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 const Gallery = () => {
   const [activeImage, setActiveImage] = useState<string | null>(null);
@@ -37,20 +45,43 @@ const Gallery = () => {
           </p>
         </div>
         
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-          {galleryImages.map((image, index) => (
-            <div 
-              key={index} 
-              className="overflow-hidden rounded-lg shadow-md h-64 cursor-pointer transform transition-transform duration-300 hover:shadow-xl hover:scale-105"
-              onClick={() => openLightbox(image)}
-            >
-              <img 
-                src={image} 
-                alt={`ME Caravan Gallery ${index + 1}`} 
-                className="w-full h-full object-cover"
-              />
-            </div>
-          ))}
+        <div className="max-w-4xl mx-auto">
+          <Carousel className="w-full" opts={{ loop: true, direction: "rtl" }}>
+            <CarouselContent>
+              {galleryImages.map((image, index) => (
+                <CarouselItem key={index} className="basis-full">
+                  <div 
+                    className="h-[500px] overflow-hidden rounded-lg shadow-md cursor-pointer"
+                    onClick={() => openLightbox(image)}
+                  >
+                    <img 
+                      src={image} 
+                      alt={`ME Caravan Gallery ${index + 1}`} 
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="right-0 -translate-y-1/2 left-auto" icon={<ChevronLeft className="h-6 w-6" />} />
+            <CarouselNext className="left-0 -translate-y-1/2 right-auto" icon={<ChevronRight className="h-6 w-6" />} />
+          </Carousel>
+          
+          <div className="mt-6 grid grid-cols-4 gap-2">
+            {galleryImages.slice(0, 4).map((image, index) => (
+              <div
+                key={`thumb-${index}`}
+                className="h-20 overflow-hidden rounded-md border border-gray-200 cursor-pointer"
+                onClick={() => openLightbox(image)}
+              >
+                <img
+                  src={image}
+                  alt={`Thumbnail ${index + 1}`}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 
@@ -75,6 +106,21 @@ const Gallery = () => {
             className="max-w-[90%] max-h-[90vh] object-contain"
           />
         )}
+        
+        <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2">
+          {galleryImages.map((image, index) => (
+            <button
+              key={`lightbox-thumb-${index}`}
+              className={`w-3 h-3 rounded-full ${
+                activeImage === image ? "bg-gold" : "bg-white bg-opacity-50"
+              }`}
+              onClick={(e) => {
+                e.stopPropagation();
+                setActiveImage(image);
+              }}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );

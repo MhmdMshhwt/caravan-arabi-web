@@ -1,40 +1,48 @@
 
+import { Link } from "react-router-dom";
+
 const Products = () => {
   const products = [
     {
       id: 1,
       name: "عربة كافيه متنقلة",
+      categoryId: "food-trucks",
       description: "عربة متخصصة لتقديم القهوة والمشروبات، مجهزة بالكامل بمعدات احترافية",
       image: "https://images.unsplash.com/photo-1506650748487-17c92dc98535?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
     },
     {
       id: 2,
       name: "مكاتب متنقلة",
+      categoryId: "mobile-offices",
       description: "حلول مكتبية متنقلة للشركات والمؤسسات، مصممة بحرفية عالية لتوفير بيئة عمل متكاملة",
       image: "https://images.unsplash.com/photo-1531973486364-5fa64260d75b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
     },
     {
       id: 3,
       name: "عربات طعام متنقلة",
+      categoryId: "food-trucks",
       description: "تجهيزات كاملة لعربات الطعام بمختلف أنواعها، مطابقة لمعايير السلامة الغذائية",
       image: "https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?ixlib=rb-1.2.1&auto=format&fit=crop&w=1267&q=80"
     },
     {
       id: 4,
       name: "كرفانات سكنية",
+      categoryId: "caravans",
       description: "وحدات سكنية متنقلة بتصاميم عصرية وتجهيزات متكاملة توفر الراحة والرفاهية",
       image: "https://images.unsplash.com/photo-1551797802-f2dd1ec0033e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1267&q=80"
     },
     {
       id: 5,
       name: "عربات تسويقية",
+      categoryId: "kiosks",
       description: "عربات مخصصة للعرض والتسويق، مصممة لجذب العملاء وعرض المنتجات بطريقة احترافية",
       image: "https://images.unsplash.com/photo-1531968455001-5c5272a41129?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
     },
     {
       id: 6,
-      name: "عربات خدمية",
-      description: "عربات متنقلة لتقديم الخدمات المختلفة، مثل خدمات الصيانة والإسعافات الأولية",
+      name: "ملاجئ متنقلة",
+      categoryId: "shelters",
+      description: "ملاجئ متنقلة آمنة ومتينة، مصممة لتوفير الحماية والراحة في مختلف الظروف",
       image: "https://images.unsplash.com/photo-1612199621372-1b65c96440a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1267&q=80"
     },
   ];
@@ -63,9 +71,14 @@ const Products = () => {
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2">{product.name}</h3>
                 <p className="text-gray-600">{product.description}</p>
-                <a href="#contact" className="mt-4 inline-block text-gold font-medium hover:underline">
-                  المزيد من التفاصيل
-                </a>
+                <div className="mt-4 flex justify-between">
+                  <Link to={`/products/${product.categoryId}`} className="inline-block text-gold font-medium hover:underline">
+                    المزيد من التفاصيل
+                  </Link>
+                  <Link to="/#contact" className="inline-block text-gold font-medium hover:underline">
+                    طلب عرض سعر
+                  </Link>
+                </div>
               </div>
             </div>
           ))}
