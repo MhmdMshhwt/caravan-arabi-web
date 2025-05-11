@@ -63,8 +63,12 @@ const Gallery = () => {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="right-0 -translate-y-1/2 left-auto" icon={<ChevronLeft className="h-6 w-6" />} />
-            <CarouselNext className="left-0 -translate-y-1/2 right-auto" icon={<ChevronRight className="h-6 w-6" />} />
+            <CarouselPrevious className="right-0 -translate-y-1/2 left-auto">
+              <ChevronLeft className="h-6 w-6" />
+            </CarouselPrevious>
+            <CarouselNext className="left-0 -translate-y-1/2 right-auto">
+              <ChevronRight className="h-6 w-6" />
+            </CarouselNext>
           </Carousel>
           
           <div className="mt-6 grid grid-cols-4 gap-2">
