@@ -1,137 +1,142 @@
-
-import { useState, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { useState, useEffect } from "react";
+import { useParams, Link } from "react-router-dom";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 import { ChevronRight, ChevronLeft } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const ProjectDetail = () => {
   const { projectId } = useParams<{ projectId: string }>();
   const [activeImage, setActiveImage] = useState<string | null>(null);
-  
+
   // In a real app, you would fetch this data from an API
   const projectsData = {
-    'caravan-project': {
-      title: 'مشروع كرفانات سكنية',
-      description: 'تصميم وتنفيذ كرفانات سكنية متكاملة لمشروع إسكان العاملين في منطقة الرياض. تم تجهيز الكرفانات بكافة الخدمات الضرورية من أنظمة تكييف وتدفئة وشبكات صحية وكهربائية.',
-      location: 'الرياض، المملكة العربية السعودية',
-      client: 'شركة الإنشاءات السعودية',
-      completionDate: '2022',
+    "caravan-project": {
+      title: "مشروع كرفانات سكنية",
+      description:
+        "تصميم وتنفيذ كرفانات سكنية متكاملة لمشروع إسكان العاملين في منطقة الرياض. تم تجهيز الكرفانات بكافة الخدمات الضرورية من أنظمة تكييف وتدفئة وشبكات صحية وكهربائية.",
+      location: "الرياض، المملكة العربية السعودية",
+      client: "شركة الإنشاءات السعودية",
+      completionDate: "2022",
       images: [
-        'https://images.unsplash.com/photo-1520106212299-d99c443e4568?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
-        'https://images.unsplash.com/photo-1600359756098-8bc52195bbf4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
-        'https://images.unsplash.com/photo-1543590172-e2fb4b3d1ea3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
-        'https://images.unsplash.com/photo-1534513259966-c921b31ba599?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
+        "https://images.unsplash.com/photo-1563783850023-077d97825802?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://plus.unsplash.com/premium_photo-1664287397511-9b037f603b99?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1513311068348-19c8fbdc0bb6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       ],
       features: [
-        'مساحة سكنية مريحة تتسع لـ 4 أشخاص',
-        'أنظمة تكييف وتدفئة متطورة',
-        'نظام كهربائي متكامل',
-        'عزل حراري ممتاز',
-        'مقاومة للعوامل الجوية القاسية',
-      ]
+        "مساحة سكنية مريحة تتسع لـ 4 أشخاص",
+        "أنظمة تكييف وتدفئة متطورة",
+        "نظام كهربائي متكامل",
+        "عزل حراري ممتاز",
+        "مقاومة للعوامل الجوية القاسية",
+      ],
     },
-    'shelter-project': {
-      title: 'مشروع ملاجئ متنقلة',
-      description: 'تصميم وتوريد ملاجئ متنقلة لمواقع العمل الميدانية في منطقة جدة. هذه الملاجئ مصممة لتوفير حماية من الظروف الجوية القاسية وتوفير مساحة آمنة ومريحة للعاملين.',
-      location: 'جدة، المملكة العربية السعودية',
-      client: 'شركة المشاريع العربية',
-      completionDate: '2023',
+    "shelter-project": {
+      title: "مشروع ملاجئ متنقلة",
+      description:
+        "تصميم وتوريد ملاجئ متنقلة لمواقع العمل الميدانية في منطقة جدة. هذه الملاجئ مصممة لتوفير حماية من الظروف الجوية القاسية وتوفير مساحة آمنة ومريحة للعاملين.",
+      location: "جدة، المملكة العربية السعودية",
+      client: "شركة المشاريع العربية",
+      completionDate: "2023",
       images: [
-        'https://images.unsplash.com/photo-1600359756098-8bc52195bbf4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
-        'https://images.unsplash.com/photo-1520106212299-d99c443e4568?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
-        'https://images.unsplash.com/photo-1534513259966-c921b31ba599?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
-        'https://images.unsplash.com/photo-1583938148905-2a8ccfccceb2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
+        "https://images.unsplash.com/photo-1563783850023-077d97825802?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://plus.unsplash.com/premium_photo-1664287397511-9b037f603b99?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1513311068348-19c8fbdc0bb6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       ],
       features: [
-        'هيكل متين مقاوم للظروف الجوية',
-        'عزل حراري وصوتي',
-        'سهولة النقل والتركيب',
-        'نظام إضاءة داخلي',
-        'نوافذ خاصة للتهوية',
-      ]
+        "هيكل متين مقاوم للظروف الجوية",
+        "عزل حراري وصوتي",
+        "سهولة النقل والتركيب",
+        "نظام إضاءة داخلي",
+        "نوافذ خاصة للتهوية",
+      ],
     },
-    'office-project': {
-      title: 'مكاتب إدارية متنقلة',
-      description: 'تجهيز مكاتب إدارية متنقلة لموقع مشروع إنشائي في الدمام. تم تصميم المكاتب لتوفير بيئة عمل مريحة وعملية للإدارة والمهندسين في الموقع.',
-      location: 'الدمام، المملكة العربية السعودية',
-      client: 'مؤسسة التطوير العمراني',
-      completionDate: '2022',
+    "office-project": {
+      title: "مكاتب إدارية متنقلة",
+      description:
+        "تجهيز مكاتب إدارية متنقلة لموقع مشروع إنشائي في الدمام. تم تصميم المكاتب لتوفير بيئة عمل مريحة وعملية للإدارة والمهندسين في الموقع.",
+      location: "الدمام، المملكة العربية السعودية",
+      client: "مؤسسة التطوير العمراني",
+      completionDate: "2022",
       images: [
-        'https://images.unsplash.com/photo-1543590172-e2fb4b3d1ea3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
-        'https://images.unsplash.com/photo-1520106212299-d99c443e4568?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
-        'https://images.unsplash.com/photo-1622876168001-7e5e45a41435?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
-        'https://images.unsplash.com/photo-1566195992011-5f6b21e539aa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
+        "https://images.unsplash.com/photo-1563783850023-077d97825802?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://plus.unsplash.com/premium_photo-1664287397511-9b037f603b99?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1513311068348-19c8fbdc0bb6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       ],
       features: [
-        'تجهيزات مكتبية كاملة',
-        'شبكة اتصالات متكاملة',
-        'أنظمة تكييف وتهوية',
-        'إضاءة مناسبة للعمل المكتبي',
-        'غرف اجتماعات مجهزة',
-      ]
+        "تجهيزات مكتبية كاملة",
+        "شبكة اتصالات متكاملة",
+        "أنظمة تكييف وتهوية",
+        "إضاءة مناسبة للعمل المكتبي",
+        "غرف اجتماعات مجهزة",
+      ],
     },
-    'food-truck-project': {
-      title: 'عربات طعام متنقلة',
-      description: 'تصميم وتنفيذ عربات طعام متنقلة لمهرجان المأكولات في المدينة المنورة. تم تجهيز العربات بكافة المعدات اللازمة لتحضير وتقديم الطعام بطريقة احترافية.',
-      location: 'المدينة المنورة، المملكة العربية السعودية',
-      client: 'هيئة تنظيم المهرجانات',
-      completionDate: '2023',
+    "food-truck-project": {
+      title: "عربات طعام متنقلة",
+      description:
+        "تصميم وتنفيذ عربات طعام متنقلة لمهرجان المأكولات في المدينة المنورة. تم تجهيز العربات بكافة المعدات اللازمة لتحضير وتقديم الطعام بطريقة احترافية.",
+      location: "المدينة المنورة، المملكة العربية السعودية",
+      client: "هيئة تنظيم المهرجانات",
+      completionDate: "2023",
       images: [
-        'https://images.unsplash.com/photo-1534513259966-c921b31ba599?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
-        'https://images.unsplash.com/photo-1543590172-e2fb4b3d1ea3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
-        'https://images.unsplash.com/photo-1600359756098-8bc52195bbf4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
-        'https://images.unsplash.com/photo-1623240644272-b5d2390e23d1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
+        "https://images.unsplash.com/photo-1563783850023-077d97825802?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://plus.unsplash.com/premium_photo-1664287397511-9b037f603b99?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1513311068348-19c8fbdc0bb6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       ],
       features: [
-        'مطبخ مجهز بالكامل',
-        'أنظمة تخزين وتبريد',
-        'نظام صرف صحي',
-        'تجهيزات عرض الطعام',
-        'أنظمة سلامة وإطفاء حريق',
-      ]
+        "مطبخ مجهز بالكامل",
+        "أنظمة تخزين وتبريد",
+        "نظام صرف صحي",
+        "تجهيزات عرض الطعام",
+        "أنظمة سلامة وإطفاء حريق",
+      ],
     },
-    'kiosk-project': {
-      title: 'أكشاك تجارية',
-      description: 'تصميم وتنفيذ أكشاك تجارية لمجمع تسوق مفتوح في الرياض. تم تصميم الأكشاك بحيث تكون جذابة للزوار وعملية للبائعين.',
-      location: 'الرياض، المملكة العربية السعودية',
-      client: 'شركة تطوير المشاريع التجارية',
-      completionDate: '2021',
+    "kiosk-project": {
+      title: "أكشاك تجارية",
+      description:
+        "تصميم وتنفيذ أكشاك تجارية لمجمع تسوق مفتوح في الرياض. تم تصميم الأكشاك بحيث تكون جذابة للزوار وعملية للبائعين.",
+      location: "الرياض، المملكة العربية السعودية",
+      client: "شركة تطوير المشاريع التجارية",
+      completionDate: "2021",
       images: [
-        'https://images.unsplash.com/photo-1583938148905-2a8ccfccceb2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
-        'https://images.unsplash.com/photo-1534513259966-c921b31ba599?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
-        'https://images.unsplash.com/photo-1623240644272-b5d2390e23d1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
-        'https://images.unsplash.com/photo-1622876168001-7e5e45a41435?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
+        "https://images.unsplash.com/photo-1563783850023-077d97825802?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://plus.unsplash.com/premium_photo-1664287397511-9b037f603b99?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1513311068348-19c8fbdc0bb6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       ],
       features: [
-        'تصميم عصري جذاب',
-        'مساحة عرض مناسبة',
-        'إضاءة احترافية',
-        'نظام تخزين مدمج',
-        'سهولة النقل والتركيب',
-      ]
+        "تصميم عصري جذاب",
+        "مساحة عرض مناسبة",
+        "إضاءة احترافية",
+        "نظام تخزين مدمج",
+        "سهولة النقل والتركيب",
+      ],
     },
-    'cafe-project': {
-      title: 'كافيهات متنقلة',
-      description: 'تجهيز وحدات كافيه متنقلة لسلسلة مقاهي شهيرة في مكة المكرمة. تم تجهيز الوحدات بأحدث معدات تحضير القهوة والمشروبات.',
-      location: 'مكة المكرمة، المملكة العربية السعودية',
-      client: 'شركة مذاق العربية للمطاعم',
-      completionDate: '2023',
+    "cafe-project": {
+      title: "كافيهات متنقلة",
+      description:
+        "تجهيز وحدات كافيه متنقلة لسلسلة مقاهي شهيرة في مكة المكرمة. تم تجهيز الوحدات بأحدث معدات تحضير القهوة والمشروبات.",
+      location: "مكة المكرمة، المملكة العربية السعودية",
+      client: "شركة مذاق العربية للمطاعم",
+      completionDate: "2023",
       images: [
-        'https://images.unsplash.com/photo-1623240644272-b5d2390e23d1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
-        'https://images.unsplash.com/photo-1622876168001-7e5e45a41435?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
-        'https://images.unsplash.com/photo-1566195992011-5f6b21e539aa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
-        'https://images.unsplash.com/photo-1520106212299-d99c443e4568?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
+        "https://images.unsplash.com/photo-1563783850023-077d97825802?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://plus.unsplash.com/premium_photo-1664287397511-9b037f603b99?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1513311068348-19c8fbdc0bb6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       ],
       features: [
-        'معدات صنع قهوة احترافية',
-        'نظام تخزين وتبريد',
-        'مساحة خدمة مناسبة',
-        'تصميم يعكس هوية العلامة التجارية',
-        'نظام كهربائي متكامل',
-      ]
+        "معدات صنع قهوة احترافية",
+        "نظام تخزين وتبريد",
+        "مساحة خدمة مناسبة",
+        "تصميم يعكس هوية العلامة التجارية",
+        "نظام كهربائي متكامل",
+      ],
     },
   };
 
@@ -139,12 +144,12 @@ const ProjectDetail = () => {
 
   const openLightbox = (image: string) => {
     setActiveImage(image);
-    document.body.style.overflow = 'hidden';
+    document.body.style.overflow = "hidden";
   };
 
   const closeLightbox = () => {
     setActiveImage(null);
-    document.body.style.overflow = 'auto';
+    document.body.style.overflow = "auto";
   };
 
   if (!project) {
@@ -166,40 +171,49 @@ const ProjectDetail = () => {
   return (
     <div className="min-h-screen font-cairo" dir="rtl">
       <Header />
-      
+
       <div className="pt-24 pb-16">
         <div className="container mx-auto px-4">
           {/* Breadcrumbs */}
           <div className="mb-8">
             <div className="flex items-center text-gray-600 text-sm">
-              <Link to="/" className="hover:text-gold">الرئيسية</Link>
+              <Link to="/" className="hover:text-gold">
+                الرئيسية
+              </Link>
               <span className="mx-2">»</span>
-              <Link to="/projects" className="hover:text-gold">مشاريعنا</Link>
+              <Link to="/projects" className="hover:text-gold">
+                مشاريعنا
+              </Link>
               <span className="mx-2">»</span>
               <span>{project.title}</span>
             </div>
           </div>
-          
+
           <div className="mb-10">
-            <h1 className="text-3xl md:text-4xl font-bold mb-4">{project.title}</h1>
+            <h1 className="text-3xl md:text-4xl font-bold mb-4">
+              {project.title}
+            </h1>
             <div className="w-24 h-1 bg-gold"></div>
           </div>
-          
+
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <div className="lg:col-span-2">
               {/* Project Images Carousel */}
               <div className="mb-8">
-                <Carousel className="w-full" opts={{ loop: true, direction: "rtl" }}>
+                <Carousel
+                  className="w-full"
+                  opts={{ loop: true, direction: "rtl" }}
+                >
                   <CarouselContent>
                     {project.images.map((image, index) => (
                       <CarouselItem key={index} className="basis-full">
-                        <div 
+                        <div
                           className="h-[400px] overflow-hidden rounded-lg shadow-md cursor-pointer"
                           onClick={() => openLightbox(image)}
                         >
-                          <img 
-                            src={image} 
-                            alt={`${project.title} - صورة ${index + 1}`} 
+                          <img
+                            src={image}
+                            alt={`${project.title} - صورة ${index + 1}`}
                             className="w-full h-full object-cover"
                           />
                         </div>
@@ -213,7 +227,7 @@ const ProjectDetail = () => {
                     <ChevronRight className="h-6 w-6" />
                   </CarouselNext>
                 </Carousel>
-                
+
                 <div className="mt-4 grid grid-cols-4 gap-2">
                   {project.images.map((image, index) => (
                     <div
@@ -230,14 +244,14 @@ const ProjectDetail = () => {
                   ))}
                 </div>
               </div>
-              
+
               <div className="mb-8">
                 <h2 className="text-2xl font-bold mb-4">عن المشروع</h2>
                 <p className="text-gray-700 leading-relaxed mb-6">
                   {project.description}
                 </p>
               </div>
-              
+
               <div>
                 <h2 className="text-2xl font-bold mb-4">مميزات المشروع</h2>
                 <ul className="list-disc list-inside space-y-2 text-gray-700">
@@ -247,7 +261,7 @@ const ProjectDetail = () => {
                 </ul>
               </div>
             </div>
-            
+
             <div className="lg:col-span-1">
               <div className="bg-gray-50 p-6 rounded-lg shadow-sm mb-6">
                 <h3 className="text-xl font-bold mb-4">تفاصيل المشروع</h3>
@@ -266,11 +280,14 @@ const ProjectDetail = () => {
                   </div>
                 </div>
               </div>
-              
+
               <div className="bg-gold bg-opacity-10 p-6 rounded-lg">
-                <h3 className="text-xl font-bold mb-4">هل تريد مشروعاً مشابهاً؟</h3>
+                <h3 className="text-xl font-bold mb-4">
+                  هل تريد مشروعاً مشابهاً؟
+                </h3>
                 <p className="mb-6 text-gray-700">
-                  فريقنا المتخصص جاهز لمساعدتك في تصميم وتنفيذ مشروعك الخاص وفقاً لاحتياجاتك.
+                  فريقنا المتخصص جاهز لمساعدتك في تصميم وتنفيذ مشروعك الخاص
+                  وفقاً لاحتياجاتك.
                 </p>
                 <Link to="/#contact" className="gold-button block text-center">
                   تواصل معنا
@@ -280,30 +297,30 @@ const ProjectDetail = () => {
           </div>
         </div>
       </div>
-      
+
       {/* Lightbox */}
-      <div 
+      <div
         className={cn(
           "fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center transition-opacity duration-300",
           activeImage ? "opacity-100" : "opacity-0 pointer-events-none"
         )}
         onClick={closeLightbox}
       >
-        <button 
+        <button
           className="absolute top-4 right-4 text-white text-4xl font-light"
           onClick={closeLightbox}
         >
           ×
         </button>
         {activeImage && (
-          <img 
-            src={activeImage} 
-            alt="عرض مكبر" 
+          <img
+            src={activeImage}
+            alt="عرض مكبر"
             className="max-w-[90%] max-h-[90vh] object-contain"
           />
         )}
       </div>
-      
+
       <Footer />
     </div>
   );

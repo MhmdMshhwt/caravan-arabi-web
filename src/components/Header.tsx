@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { ChevronDown } from "lucide-react";
@@ -30,13 +29,22 @@ const Header = () => {
     { id: "shelters", label: "ملاجئ", path: "/products/shelters" },
     { id: "kiosks", label: "أكشاك", path: "/products/kiosks" },
     { id: "food-trucks", label: "عربات طعام", path: "/products/food-trucks" },
-    { id: "mobile-offices", label: "مكاتب متنقلة", path: "/products/mobile-offices" },
+    {
+      id: "mobile-offices",
+      label: "مكاتب متنقلة",
+      path: "/products/mobile-offices",
+    },
   ];
 
   const navItems = [
     { id: "home", label: "الرئيسية", path: "/" },
     { id: "about", label: "من نحن", path: "/about-us" },
-    { id: "products", label: "منتجاتنا", path: "/#products", hasDropdown: true },
+    {
+      id: "products",
+      label: "منتجاتنا",
+      path: "/#products",
+      hasDropdown: true,
+    },
     { id: "projects", label: "مشاريعنا", path: "/projects" },
     { id: "gallery", label: "المعرض", path: "/gallery" },
     { id: "videos", label: "فيديوهات", path: "/videos" },
@@ -47,9 +55,7 @@ const Header = () => {
     <header
       className={cn(
         "fixed top-0 right-0 left-0 z-50 transition-all duration-300 font-cairo",
-        isScrolled
-          ? "bg-white shadow-md py-2"
-          : "bg-transparent py-4"
+        isScrolled ? "bg-white shadow-md py-2" : "bg-white py-4"
       )}
     >
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
@@ -62,13 +68,15 @@ const Header = () => {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:block">
-          <ul className="flex space-x-1 space-x-reverse">
+          <ul className="flex space-x-1 space-x-reverse items-center ">
             {navItems.map((item) => (
               <li key={item.id} className="relative">
                 {item.hasDropdown ? (
                   <div className="relative">
                     <button
-                      onClick={() => setProductsDropdownOpen(!productsDropdownOpen)}
+                      onClick={() =>
+                        setProductsDropdownOpen(!productsDropdownOpen)
+                      }
                       className="px-4 py-2 hover:text-gold font-medium flex items-center"
                       onMouseEnter={() => setProductsDropdownOpen(true)}
                       onMouseLeave={() => setProductsDropdownOpen(false)}
@@ -76,16 +84,16 @@ const Header = () => {
                       {item.label}
                       <ChevronDown size={16} className="mr-1" />
                     </button>
-                    
+
                     {productsDropdownOpen && (
-                      <div 
+                      <div
                         className="absolute top-full right-0 bg-white shadow-lg rounded-md py-2 min-w-[200px] z-50"
                         onMouseEnter={() => setProductsDropdownOpen(true)}
                         onMouseLeave={() => setProductsDropdownOpen(false)}
                       >
                         {productCategories.map((category) => (
-                          <Link 
-                            key={category.id} 
+                          <Link
+                            key={category.id}
                             to={category.path}
                             className="block px-4 py-2 hover:bg-gray-100 text-gray-700 hover:text-gold text-right"
                             onClick={() => {
@@ -151,18 +159,20 @@ const Header = () => {
                     {item.hasDropdown ? (
                       <div className="text-center">
                         <button
-                          onClick={() => setProductsDropdownOpen(!productsDropdownOpen)}
+                          onClick={() =>
+                            setProductsDropdownOpen(!productsDropdownOpen)
+                          }
                           className="text-xl font-medium hover:text-gold flex items-center"
                         >
                           {item.label}
                           <ChevronDown size={16} className="mr-1" />
                         </button>
-                        
+
                         {productsDropdownOpen && (
                           <div className="mt-2 py-2">
                             {productCategories.map((category) => (
-                              <Link 
-                                key={category.id} 
+                              <Link
+                                key={category.id}
                                 to={category.path}
                                 className="block py-2 hover:text-gold text-lg"
                                 onClick={() => {
