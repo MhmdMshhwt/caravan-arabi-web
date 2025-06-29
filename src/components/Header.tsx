@@ -1,9 +1,8 @@
-
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { ChevronDown } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
-
+import logo1Image from "@/assets/images/logo/logo3-removebg-preview.png";
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -27,13 +26,46 @@ const Header = () => {
 
   const productCategories = [
     { id: "caravans", label: "كرفانات", path: "/products/caravans" },
-    { id: "shelters", label: "ملاجئ", path: "/products/shelters" },
-    { id: "kiosks", label: "أكشاك", path: "/products/kiosks" },
-    { id: "food-trucks", label: "عربات طعام", path: "/products/food-trucks" },
+    { id: "fixed-units", label: "وحدات ثابته", path: "/products/fixed-units" },
     {
-      id: "mobile-offices",
-      label: "مكاتب متنقلة",
-      path: "/products/mobile-offices",
+      id: "mobile-toilets",
+      label: "حمامات متنقله",
+      path: "/products/mobile-toilets",
+    },
+    {
+      id: "ready-made-homes",
+      label: "منازل جاهزه",
+      path: "/products/eady-made-homes",
+    },
+    {
+      id: "guard-booths",
+      label: "اكشاك حراسه",
+      path: "/products/guard-booths",
+    },
+    {
+      id: "mobile/fixed-restaurants",
+      label: "مطاعم متنقله وثابته",
+      path: "/products/mobile/fixed-restaurants",
+    },
+    {
+      id: "metal-fences",
+      label: "اسوار معدنيه",
+      path: "/products/metal-fences",
+    },
+    {
+      id: "cars-umbrellas",
+      label: "مظلات عربيات",
+      path: "/products/cars-umbrellas",
+    },
+    {
+      id: "containers",
+      label: "حاويات",
+      path: "/products/containers",
+    },
+    {
+      id: "metal-hangars",
+      label: "هناجر معدنيه",
+      path: "/products/metal-hangars",
     },
   ];
 
@@ -62,10 +94,10 @@ const Header = () => {
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
         {/* Logo */}
         <Link to="/" className="z-10">
-          <img 
-            src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=120&h=60&fit=crop&crop=center" 
-            alt="ME Caravan Logo" 
-            className="h-10 md:h-12 w-auto"
+          <img
+            src={logo1Image}
+            alt="ME Caravan Logo"
+            className="h-10 md:h-20 w-auto"
           />
         </Link>
 
