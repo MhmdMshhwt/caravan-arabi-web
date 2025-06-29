@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import Header from "../components/Header";
@@ -16,15 +17,14 @@ const ProjectDetail = () => {
   const { projectId } = useParams<{ projectId: string }>();
   const [activeImage, setActiveImage] = useState<string | null>(null);
 
-  // In a real app, you would fetch this data from an API
+  // Updated project data to match the new product categories
   const projectsData = {
     "caravan-project": {
       title: "مشروع كرفانات سكنية",
-      description:
-        "تصميم وتنفيذ كرفانات سكنية متكاملة لمشروع إسكان العاملين في منطقة الرياض. تم تجهيز الكرفانات بكافة الخدمات الضرورية من أنظمة تكييف وتدفئة وشبكات صحية وكهربائية.",
+      description: "تصميم وتنفيذ كرفانات سكنية متكاملة لمشروع إسكان العاملين في منطقة الرياض. تم تجهيز الكرفانات بكافة الخدمات الضرورية من أنظمة تكييف وتدفئة وشبكات صحية وكهربائية.",
       location: "الرياض، المملكة العربية السعودية",
       client: "شركة الإنشاءات السعودية",
-      completionDate: "2022",
+      completionDate: "2023",
       images: [
         "https://images.unsplash.com/photo-1563783850023-077d97825802?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         "https://plus.unsplash.com/premium_photo-1664287397511-9b037f603b99?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -38,104 +38,158 @@ const ProjectDetail = () => {
         "مقاومة للعوامل الجوية القاسية",
       ],
     },
-    "shelter-project": {
-      title: "مشروع ملاجئ متنقلة",
-      description:
-        "تصميم وتوريد ملاجئ متنقلة لمواقع العمل الميدانية في منطقة جدة. هذه الملاجئ مصممة لتوفير حماية من الظروف الجوية القاسية وتوفير مساحة آمنة ومريحة للعاملين.",
+    "fixed-units-project": {
+      title: "مشروع وحدات ثابتة",
+      description: "تجهيز وحدات ثابتة لمجمع سكني متكامل في جدة. تم تصميم الوحدات لتوفير حلول سكنية دائمة بأعلى معايير الجودة والراحة.",
       location: "جدة، المملكة العربية السعودية",
       client: "شركة المشاريع العربية",
       completionDate: "2023",
       images: [
-        "https://images.unsplash.com/photo-1563783850023-077d97825802?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "https://plus.unsplash.com/premium_photo-1664287397511-9b037f603b99?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1531973486364-5fa64260d75b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
         "https://images.unsplash.com/photo-1513311068348-19c8fbdc0bb6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       ],
       features: [
-        "هيكل متين مقاوم للظروف الجوية",
-        "عزل حراري وصوتي",
-        "سهولة النقل والتركيب",
-        "نظام إضاءة داخلي",
-        "نوافذ خاصة للتهوية",
+        "تصميم قوي ومتين",
+        "مساحات واسعة ومريحة",
+        "تجهيزات كاملة",
+        "عزل حراري وصوتي متطور",
+        "أنظمة أمان حديثة",
       ],
     },
-    "office-project": {
-      title: "مكاتب إدارية متنقلة",
-      description:
-        "تجهيز مكاتب إدارية متنقلة لموقع مشروع إنشائي في الدمام. تم تصميم المكاتب لتوفير بيئة عمل مريحة وعملية للإدارة والمهندسين في الموقع.",
+    "mobile-toilets-project": {
+      title: "مشروع حمامات متنقلة",
+      description: "توريد وتركيب حمامات متنقلة لمواقع العمل الميدانية في الدمام. تم تجهيز الحمامات بأحدث المعايير الصحية والبيئية.",
       location: "الدمام، المملكة العربية السعودية",
       client: "مؤسسة التطوير العمراني",
-      completionDate: "2022",
+      completionDate: "2023",
       images: [
-        "https://images.unsplash.com/photo-1563783850023-077d97825802?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "https://plus.unsplash.com/premium_photo-1664287397511-9b037f603b99?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "https://images.unsplash.com/photo-1513311068348-19c8fbdc0bb6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
       ],
       features: [
-        "تجهيزات مكتبية كاملة",
-        "شبكة اتصالات متكاملة",
-        "أنظمة تكييف وتهوية",
-        "إضاءة مناسبة للعمل المكتبي",
-        "غرف اجتماعات مجهزة",
+        "نظافة عالية ومعايير صحية متطورة",
+        "سهولة النقل والتركيب",
+        "أنظمة تهوية متقدمة",
+        "مقاومة للعوامل الجوية",
+        "صديقة للبيئة",
       ],
     },
-    "food-truck-project": {
-      title: "عربات طعام متنقلة",
-      description:
-        "تصميم وتنفيذ عربات طعام متنقلة لمهرجان المأكولات في المدينة المنورة. تم تجهيز العربات بكافة المعدات اللازمة لتحضير وتقديم الطعام بطريقة احترافية.",
+    "ready-made-homes-project": {
+      title: "مشروع منازل جاهزة",
+      description: "تصميم وتنفيذ منازل جاهزة لمخيم سكني في المدينة المنورة. تم تجهيز المنازل بكافة المرافق والخدمات للسكن الفوري.",
       location: "المدينة المنورة، المملكة العربية السعودية",
       client: "هيئة تنظيم المهرجانات",
       completionDate: "2023",
       images: [
-        "https://images.unsplash.com/photo-1563783850023-077d97825802?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "https://plus.unsplash.com/premium_photo-1664287397511-9b037f603b99?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "https://images.unsplash.com/photo-1513311068348-19c8fbdc0bb6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1513694203232-719a280e022f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
       ],
       features: [
-        "مطبخ مجهز بالكامل",
-        "أنظمة تخزين وتبريد",
-        "نظام صرف صحي",
-        "تجهيزات عرض الطعام",
-        "أنظمة سلامة وإطفاء حريق",
+        "جاهزة للسكن فوراً",
+        "تصاميم عصرية ومريحة",
+        "مرافق متكاملة",
+        "عزل حراري وصوتي ممتاز",
+        "أنظمة كهربائية وصحية متطورة",
       ],
     },
-    "kiosk-project": {
-      title: "أكشاك تجارية",
-      description:
-        "تصميم وتنفيذ أكشاك تجارية لمجمع تسوق مفتوح في الرياض. تم تصميم الأكشاك بحيث تكون جذابة للزوار وعملية للبائعين.",
+    "guard-booths-project": {
+      title: "مشروع أكشاك حراسة",
+      description: "تجهيز أكشاك حراسة أمنية لمجمع تجاري في الرياض. تم تزويد الأكشاك بأحدث أنظمة المراقبة والأمان.",
       location: "الرياض، المملكة العربية السعودية",
       client: "شركة تطوير المشاريع التجارية",
-      completionDate: "2021",
+      completionDate: "2022",
       images: [
-        "https://images.unsplash.com/photo-1563783850023-077d97825802?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "https://plus.unsplash.com/premium_photo-1664287397511-9b037f603b99?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "https://images.unsplash.com/photo-1513311068348-19c8fbdc0bb6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1531968455001-5c5272a41129?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
       ],
       features: [
-        "تصميم عصري جذاب",
-        "مساحة عرض مناسبة",
-        "إضاءة احترافية",
-        "نظام تخزين مدمج",
-        "سهولة النقل والتركيب",
+        "أنظمة أمان متطورة",
+        "رؤية بانورامية شاملة",
+        "مقاومة للطقس والعوامل الجوية",
+        "أنظمة اتصال حديثة",
+        "تجهيزات مريحة للحراس",
       ],
     },
-    "cafe-project": {
-      title: "كافيهات متنقلة",
-      description:
-        "تجهيز وحدات كافيه متنقلة لسلسلة مقاهي شهيرة في مكة المكرمة. تم تجهيز الوحدات بأحدث معدات تحضير القهوة والمشروبات.",
+    "mobile-fixed-restaurants-project": {
+      title: "مشروع مطاعم متنقلة وثابتة",
+      description: "تجهيز وحدات مطاعم متنقلة وثابتة لسلسلة مطاعم في مكة المكرمة. تم تجهيز المطاعم بأحدث معدات الطبخ وأنظمة السلامة الغذائية.",
       location: "مكة المكرمة، المملكة العربية السعودية",
       client: "شركة مذاق العربية للمطاعم",
       completionDate: "2023",
       images: [
-        "https://images.unsplash.com/photo-1563783850023-077d97825802?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "https://plus.unsplash.com/premium_photo-1664287397511-9b037f603b99?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "https://images.unsplash.com/photo-1513311068348-19c8fbdc0bb6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?ixlib=rb-1.2.1&auto=format&fit=crop&w=1267&q=80",
       ],
       features: [
-        "معدات صنع قهوة احترافية",
-        "نظام تخزين وتبريد",
-        "مساحة خدمة مناسبة",
-        "تصميم يعكس هوية العلامة التجارية",
-        "نظام كهربائي متكامل",
+        "مطابخ احترافية مجهزة بالكامل",
+        "أنظمة تهوية متطورة",
+        "معدات طبخ عالية الجودة",
+        "أنظمة سلامة غذائية متقدمة",
+        "تصاميم جذابة وعملية",
+      ],
+    },
+    "metal-fences-project": {
+      title: "مشروع أسوار معدنية",
+      description: "تركيب أسوار معدنية لمجمع صناعي في الخبر. تم استخدام أجود المواد لضمان الحماية والمتانة طويلة المدى.",
+      location: "الخبر، المملكة العربية السعودية",
+      client: "الشركة الصناعية المتطورة",
+      completionDate: "2022",
+      images: [
+        "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+      ],
+      features: [
+        "متانة عالية ومقاومة للصدأ",
+        "تصاميم أمنية متطورة",
+        "سهولة التركيب والصيانة",
+        "حماية شاملة للمنشآت",
+        "مطابقة لمعايير السلامة الدولية",
+      ],
+    },
+    "cars-umbrellas-project": {
+      title: "مشروع مظلات عربيات",
+      description: "تركيب مظلات حماية للمركبات في مواقف السيارات بأبها. تم تصميم المظلات لتوفير حماية فعالة من العوامل الجوية.",
+      location: "أبها، المملكة العربية السعودية",
+      client: "إدارة المرافق العامة",
+      completionDate: "2023",
+      images: [
+        "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+      ],
+      features: [
+        "حماية كاملة للمركبات",
+        "مقاومة للأشعة فوق البنفسجية",
+        "تصميم عملي وأنيق",
+        "سهولة التركيب والصيانة",
+        "مواد عالية الجودة",
+      ],
+    },
+    "containers-project": {
+      title: "مشروع حاويات تخزين",
+      description: "توريد حاويات تخزين متخصصة لمشروع لوجستي في الجبيل. تم تصميم الحاويات لتوفير حلول تخزين آمنة وعملية.",
+      location: "الجبيل، المملكة العربية السعودية",
+      client: "شركة الخدمات اللوجستية",
+      completionDate: "2023",
+      images: [
+        "https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+      ],
+      features: [
+        "مساحة تخزين واسعة",
+        "حماية كاملة للمحتويات",
+        "متانة استثنائية",
+        "أنظمة أمان متطورة",
+        "سهولة الوصول والتحميل",
+      ],
+    },
+    "metal-hangars-project": {
+      title: "مشروع هناجر معدنية",
+      description: "بناء هناجر معدنية للتخزين الصناعي في ينبع. تم تصميم الهناجر لتحمل الأحمال الثقيلة والظروف الصناعية القاسية.",
+      location: "ينبع، المملكة العربية السعودية",
+      client: "الشركة الوطنية للصناعات",
+      completionDate: "2022",
+      images: [
+        "https://images.unsplash.com/photo-1587293852726-70cdb56c2866?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+      ],
+      features: [
+        "مساحات واسعة للتخزين الصناعي",
+        "قوة تحمل عالية للأحمال الثقيلة",
+        "مقاومة للعوامل الجوية القاسية",
+        "تصميم صناعي متطور",
+        "أنظمة تهوية وإضاءة متقدمة",
       ],
     },
   };
@@ -289,7 +343,7 @@ const ProjectDetail = () => {
                   فريقنا المتخصص جاهز لمساعدتك في تصميم وتنفيذ مشروعك الخاص
                   وفقاً لاحتياجاتك.
                 </p>
-                <Link to="/#contact" className="gold-button block text-center">
+                <Link to="/contact" className="gold-button block text-center">
                   تواصل معنا
                 </Link>
               </div>
