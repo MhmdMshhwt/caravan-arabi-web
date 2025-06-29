@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { ChevronDown } from "lucide-react";
@@ -27,13 +26,42 @@ const Header = () => {
 
   const productCategories = [
     { id: "caravans", label: "كرفانات", path: "/products/caravans" },
-    { id: "shelters", label: "ملاجئ", path: "/products/shelters" },
-    { id: "kiosks", label: "أكشاك", path: "/products/kiosks" },
-    { id: "food-trucks", label: "عربات طعام", path: "/products/food-trucks" },
+    { id: "fixed-units", label: "وحدات ثابته", path: "/products/fixed-units" },
     {
-      id: "mobile-offices",
-      label: "مكاتب متنقلة",
-      path: "/products/mobile-offices",
+      id: "mobile-toilets",
+      label: "حمامات متنقله",
+      path: "/products/mobile-toilets",
+    },
+    {
+      id: "ready-made-homes",
+      label: "منازل جاهزه",
+      path: "/products/ready-made-homes",
+    },
+    { id: "guard-booths", label: "اكشاك حراسه", path: "/products/guard-booths" },
+    {
+      id: "mobile-fixed-restaurants",
+      label: "مطاعم متنقله وثابته",
+      path: "/products/mobile-fixed-restaurants",
+    },
+    {
+      id: "metal-fences",
+      label: "اسوار معدنيه",
+      path: "/products/metal-fences",
+    },
+    {
+      id: "cars-umbrellas",
+      label: "مظلات عربيات",
+      path: "/products/cars-umbrellas",
+    },
+    {
+      id: "containers",
+      label: "حاويات",
+      path: "/products/containers",
+    },
+    {
+      id: "metal-hangars",
+      label: "هناجر معدنيه",
+      path: "/products/metal-hangars",
     },
   ];
 

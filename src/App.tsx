@@ -1,3 +1,4 @@
+
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -27,7 +28,16 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/projects/:projectId" element={<ProjectDetail />} />
-          <Route path="/products/:productId" element={<ProductDetail />} />
+          <Route path="/products/caravans" element={<ProductDetail />} />
+          <Route path="/products/fixed-units" element={<ProductDetail />} />
+          <Route path="/products/mobile-toilets" element={<ProductDetail />} />
+          <Route path="/products/ready-made-homes" element={<ProductDetail />} />
+          <Route path="/products/guard-booths" element={<ProductDetail />} />
+          <Route path="/products/mobile-fixed-restaurants" element={<ProductDetail />} />
+          <Route path="/products/metal-fences" element={<ProductDetail />} />
+          <Route path="/products/cars-umbrellas" element={<ProductDetail />} />
+          <Route path="/products/containers" element={<ProductDetail />} />
+          <Route path="/products/metal-hangars" element={<ProductDetail />} />
           <Route path="/about-us" element={<AboutUs />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/gallery" element={<GalleryPage />} />

@@ -1,3 +1,4 @@
+
 import { useParams, Link } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -17,294 +18,208 @@ const ProductDetail = () => {
   const productsData = {
     caravans: {
       title: "كرفانات",
-      description:
-        "كرفانات متنقلة بتصاميم عصرية وجودة عالية، مناسبة للاستخدامات السكنية والتجارية.",
-      longDescription:
-        "نقدم تشكيلة واسعة من الكرفانات المتنقلة المصممة وفقاً لأعلى معايير الجودة والسلامة. تتميز كرفاناتنا بتصاميم عصرية مريحة وعملية، مع إمكانية التخصيص حسب احتياجات العميل. سواء كنت تبحث عن حلول سكنية أو تجارية أو ترفيهية، فإن كرفاناتنا توفر لك الراحة والمرونة التي تحتاجها.",
-      mainImage:
-        "https://images.unsplash.com/photo-1563783850023-077d97825802?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      description: "كرفانات متنقلة بتصاميم عصرية وجودة عالية، مناسبة للاستخدامات السكنية والتجارية.",
+      longDescription: "نقدم تشكيلة واسعة من الكرفانات المتنقلة المصممة وفقاً لأعلى معايير الجودة والسلامة. تتميز كرفاناتنا بتصاميم عصرية مريحة وعملية، مع إمكانية التخصيص حسب احتياجات العميل.",
+      mainImage: "https://images.unsplash.com/photo-1563783850023-077d97825802?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       images: [
         "https://images.unsplash.com/photo-1563783850023-077d97825802?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "https://plus.unsplash.com/premium_photo-1664287397511-9b037f603b99?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         "https://images.unsplash.com/photo-1513311068348-19c8fbdc0bb6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1652946336807-bd35785ef268?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       ],
       specifications: [
-        {
-          name: "الأبعاد",
-          value: "متعددة الخيارات (3×6م، 3×9م، 3×12م)",
-        },
-        {
-          name: "الهيكل",
-          value: "حديد مجلفن مقاوم للصدأ",
-        },
-        {
-          name: "الجدران",
-          value: "ألواح مزدوجة معزولة سماكة 50 ملم",
-        },
-        {
-          name: "السقف",
-          value: "ألواح معزولة مقاومة للماء",
-        },
-        {
-          name: "الأرضية",
-          value: "خشب معالج مضاد للماء",
-        },
-        {
-          name: "النوافذ",
-          value: "ألمنيوم مزدوج الزجاج",
-        },
-        {
-          name: "الأبواب",
-          value: "معدنية مضادة للحريق",
-        },
-        {
-          name: "التكييف",
-          value: "نظام تكييف مركزي أو منفصل",
-        },
+        { name: "الأبعاد", value: "متعددة الخيارات (3×6م، 3×9م، 3×12م)" },
+        { name: "الهيكل", value: "حديد مجلفن مقاوم للصدأ" },
+        { name: "الجدران", value: "ألواح مزدوجة معزولة سماكة 50 ملم" },
+        { name: "السقف", value: "ألواح معزولة مقاومة للماء" }
       ],
       features: [
         "تصميم عصري وأنيق",
         "عزل حراري وصوتي ممتاز",
         "مقاومة للظروف الجوية القاسية",
-        "سهولة النقل والتركيب",
-        "أنظمة كهربائية وصحية متكاملة",
-        "إمكانية التوسع والتعديل",
-        "صيانة بسيطة وتكلفة تشغيل منخفضة",
-        "ضمان شامل يصل إلى 5 سنوات",
-      ],
+        "سهولة النقل والتركيب"
+      ]
     },
-    shelters: {
-      title: "ملاجئ",
-      description:
-        "ملاجئ آمنة ومتينة مصممة لتوفير الحماية والراحة في مختلف الظروف.",
-      longDescription:
-        "توفر ملاجئنا حماية فائقة وراحة في مختلف الظروف البيئية والمناخية. مصممة بعناية لتحمل الظروف القاسية مع الحفاظ على بيئة داخلية مريحة وآمنة. تستخدم ملاجئنا في العديد من التطبيقات مثل مواقع البناء، المناطق النائية، والاستخدامات الطارئة. كل ملجأ مصنوع من مواد عالية الجودة تضمن المتانة وطول العمر.",
-      mainImage:
-        "https://images.unsplash.com/photo-1563783850023-077d97825802?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "fixed-units": {
+      title: "وحدات ثابته",
+      description: "وحدات ثابتة مصممة بأعلى معايير الجودة لتوفير حلول متكاملة ومريحة.",
+      longDescription: "وحداتنا الثابتة مصممة لتوفير حلول دائمة وموثوقة للاستخدامات المختلفة. تتميز بالمتانة والجودة العالية مع تصاميم حديثة تناسب مختلف الاحتياجات.",
+      mainImage: "https://images.unsplash.com/photo-1531973486364-5fa64260d75b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
       images: [
-        "https://images.unsplash.com/photo-1563783850023-077d97825802?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "https://plus.unsplash.com/premium_photo-1664287397511-9b037f603b99?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "https://images.unsplash.com/photo-1513311068348-19c8fbdc0bb6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1531973486364-5fa64260d75b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+        "https://images.unsplash.com/photo-1513311068348-19c8fbdc0bb6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       ],
       specifications: [
-        {
-          name: "الأبعاد",
-          value: "متنوعة حسب الحاجة",
-        },
-        {
-          name: "الهيكل",
-          value: "حديد متين مقاوم للصدأ",
-        },
-        {
-          name: "الجدران",
-          value: "ألواح معزولة سماكة 60 ملم",
-        },
-        {
-          name: "السقف",
-          value: "معدني مقوى مقاوم للتسرب",
-        },
-        {
-          name: "الأرضية",
-          value: "خرسانة مسلحة أو معدنية",
-        },
-        {
-          name: "التهوية",
-          value: "نظام تهوية مدمج",
-        },
-        {
-          name: "المداخل",
-          value: "أبواب أمان معززة",
-        },
-        {
-          name: "الإضاءة",
-          value: "نظام إضاءة احتياطي",
-        },
+        { name: "النوع", value: "وحدات ثابتة متعددة الاستخدامات" },
+        { name: "المواد", value: "مواد عالية الجودة ومقاومة للعوامل الجوية" },
+        { name: "التصميم", value: "تصاميم عصرية قابلة للتخصيص" }
       ],
       features: [
-        "مقاومة عالية للظروف الجوية القاسية",
-        "عزل حراري وصوتي متميز",
-        "أنظمة تهوية فعّالة",
-        "سهولة النقل والتركيب",
-        "قابلية للتعديل والتخصيص",
-        "تصميم داخلي مريح وعملي",
-        "مقاومة للحريق والحرارة",
-        "متانة استثنائية وعمر افتراضي طويل",
-      ],
+        "تصميم قوي ومتين",
+        "قابلية للتخصيص",
+        "مقاومة للعوامل الجوية",
+        "سهولة الصيانة"
+      ]
     },
-    kiosks: {
-      title: "أكشاك",
-      description:
-        "أكشاك عصرية متنوعة الاستخدامات، مثالية للأعمال التجارية الصغيرة والمتوسطة.",
-      longDescription:
-        "أكشاكنا مصممة بعناية لتلبية احتياجات الأعمال التجارية الصغيرة والمتوسطة. نقدم تشكيلة واسعة من التصاميم العصرية والأنيقة التي تجذب العملاء وتعزز تجربتهم. تتميز أكشاكنا بالمتانة والجودة العالية، مع إمكانية تخصيص التصميم والمساحة الداخلية وفقاً لمتطلبات نشاطك التجاري. سواء كنت تبحث عن كشك لبيع القهوة، الوجبات السريعة، الملابس، أو غيرها، فإن حلولنا مثالية لبدء مشروعك التجاري بأقل تكلفة وأعلى فعالية.",
-      mainImage:
-        "https://images.unsplash.com/photo-1563783850023-077d97825802?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "mobile-toilets": {
+      title: "حمامات متنقله",
+      description: "حمامات متنقلة عملية ونظيفة، مصممة لتلبية احتياجات المواقع المختلفة.",
+      longDescription: "حماماتنا المتنقلة مصممة لتوفير حلول صحية مريحة ونظيفة للمواقع المؤقتة والفعاليات. تتميز بسهولة النقل والتركيب مع الحفاظ على أعلى معايير النظافة.",
+      mainImage: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
       images: [
-        "https://images.unsplash.com/photo-1563783850023-077d97825802?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "https://plus.unsplash.com/premium_photo-1664287397511-9b037f603b99?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "https://images.unsplash.com/photo-1513311068348-19c8fbdc0bb6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
       ],
       specifications: [
-        {
-          name: "الأبعاد",
-          value: "متوفر بعدة أحجام (2×2م، 2×3م، 3×3م)",
-        },
-        {
-          name: "الهيكل",
-          value: "حديد مجلفن خفيف الوزن",
-        },
-        {
-          name: "الجدران",
-          value: "ألواح معدنية أو زجاجية حسب الطلب",
-        },
-        {
-          name: "السقف",
-          value: "معدني مقاوم للأمطار",
-        },
-        {
-          name: "الأرضية",
-          value: "بلاط أو فينيل صناعي",
-        },
-        {
-          name: "الإضاءة",
-          value: "أضواء LED موفرة للطاقة",
-        },
-        {
-          name: "النوافذ",
-          value: "زجاج أمان قابل للفتح",
-        },
-        {
-          name: "الكهرباء",
-          value: "نظام كهربائي متكامل",
-        },
+        { name: "النوع", value: "حمامات متنقلة مجهزة بالكامل" },
+        { name: "المرافق", value: "مرحاض وحوض غسيل ومرآة" },
+        { name: "المياه", value: "خزان مياه نظيفة وخزان صرف" }
       ],
       features: [
-        "تصميم جذاب يلفت الانتباه",
-        "سهولة النقل والتركيب",
-        "مساحة عرض مثالية للمنتجات",
-        "مقاومة للظروف الجوية المختلفة",
-        "خيارات ألوان وتصاميم متعددة",
-        "امكانية إضافة لوحات إعلانية",
-        "ضمان شامل لمدة سنتين",
-        "صيانة دورية وخدمة ما بعد البيع",
-      ],
+        "نظافة عالية",
+        "سهولة النقل",
+        "مجهز بالكامل",
+        "صديق للبيئة"
+      ]
     },
-    "food-trucks": {
-      title: "عربات طعام",
-      description:
-        "عربات طعام متطورة ومجهزة بالكامل، مثالية للمشاريع الغذائية المتنقلة.",
-      longDescription:
-        "عربات الطعام المتنقلة من ME Caravan هي الخيار الأمثل لمن يبحث عن بدء مشروع في مجال الطعام بأقل تكلفة وأعلى مرونة. نقدم عربات مصممة خصيصاً لتلائم جميع أنواع المشاريع الغذائية، من المشروبات والقهوة إلى الوجبات السريعة والحلويات. تتميز عرباتنا بجودة التصنيع العالية والتجهيزات الحديثة التي تلبي متطلبات السلامة الغذائية. كما نوفر خدمات التصميم والتخصيص لتعكس هوية علامتك التجارية.",
-      mainImage:
-        "https://images.unsplash.com/photo-1563783850023-077d97825802?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "ready-made-homes": {
+      title: "منازل جاهزه",
+      description: "منازل جاهزة بتصاميم حديثة وتجهيزات كاملة، جاهزة للسكن الفوري.",
+      longDescription: "منازلنا الجاهزة توفر حلول سكن سريعة وعالية الجودة. مصممة بأحدث التقنيات وتأتي مجهزة بالكامل لتوفير الراحة والأمان لسكانها.",
+      mainImage: "https://images.unsplash.com/photo-1513694203232-719a280e022f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
       images: [
-        "https://images.unsplash.com/photo-1563783850023-077d97825802?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "https://plus.unsplash.com/premium_photo-1664287397511-9b037f603b99?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "https://images.unsplash.com/photo-1513311068348-19c8fbdc0bb6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1513694203232-719a280e022f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
       ],
       specifications: [
-        {
-          name: "الأبعاد",
-          value: "متوفرة بأحجام مختلفة حسب الاحتياج",
-        },
-        {
-          name: "الهيكل",
-          value: "حديد مجلفن عالي المتانة",
-        },
-        {
-          name: "المطبخ",
-          value: "ستانلس ستيل مطابق لمعايير السلامة الغذائية",
-        },
-        {
-          name: "التهوية",
-          value: "نظام شفط قوي مع مرشحات فائقة",
-        },
-        {
-          name: "المياه",
-          value: "خزانات مياه نظيفة وصرف صحي",
-        },
-        {
-          name: "الكهرباء",
-          value: "نظام كهربائي متكامل مع مولد احتياطي",
-        },
-        {
-          name: "التخزين",
-          value: "ثلاجات تبريد وتجميد",
-        },
-        {
-          name: "الخدمة",
-          value: "نافذة خدمة مع رف عرض",
-        },
+        { name: "النوع", value: "منازل جاهزة للسكن" },
+        { name: "المساحة", value: "مساحات متنوعة حسب الطلب" },
+        { name: "التجهيزات", value: "مجهزة بالكامل بالمرافق الأساسية" }
       ],
       features: [
-        "تصميم جذاب قابل للتخصيص",
-        "تجهيزات مطبخية احترافية",
-        "أنظمة سلامة غذائية متكاملة",
-        "سهولة الحركة والتنقل",
-        "نظام صوتي وإضاءة جذابة",
-        "مساحة إعلانية للعلامة التجارية",
-        "خيارات طاقة متعددة (كهرباء، غاز، هجينة)",
-        "التزام بالمعايير الصحية المحلية والدولية",
-      ],
+        "جاهزة للسكن فوراً",
+        "تصاميم عصرية",
+        "عزل حراري وصوتي",
+        "مرافق متكاملة"
+      ]
     },
-    "mobile-offices": {
-      title: "مكاتب متنقلة",
-      description:
-        "مكاتب متنقلة مريحة وعملية، مثالية للمواقع الإنشائية والفعاليات المؤقتة.",
-      longDescription:
-        "توفر المكاتب المتنقلة من ME Caravan بيئة عمل مثالية في أي موقع. مصممة لتلبية احتياجات الشركات والمؤسسات التي تتطلب مساحات مكتبية مؤقتة في مواقع مختلفة، مثل مشاريع البناء، المهرجانات، المعارض، أو المواقع النائية. تتميز مكاتبنا المتنقلة بالراحة والعملية، مع تجهيزات مكتبية كاملة وفق أعلى المعايير. نوفر حلولاً متنوعة تشمل مكاتب فردية، غرف اجتماعات، وحدات استقبال، وغيرها من الخيارات القابلة للتخصيص.",
-      mainImage:
-        "https://images.unsplash.com/photo-1563783850023-077d97825802?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "guard-booths": {
+      title: "اكشاك حراسه",
+      description: "أكشاك حراسة مجهزة بأنظمة أمان متطورة لضمان الحماية الفعالة.",
+      longDescription: "أكشاك الحراسة لدينا مصممة لتوفير بيئة عمل مريحة وآمنة لموظفي الأمن. مجهزة بأحدث التقنيات وأنظمة المراقبة للحصول على أقصى درجات الحماية.",
+      mainImage: "https://images.unsplash.com/photo-1531968455001-5c5272a41129?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
       images: [
-        "https://images.unsplash.com/photo-1563783850023-077d97825802?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "https://plus.unsplash.com/premium_photo-1664287397511-9b037f603b99?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "https://images.unsplash.com/photo-1513311068348-19c8fbdc0bb6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1531968455001-5c5272a41129?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
       ],
       specifications: [
-        {
-          name: "الأبعاد",
-          value: "متعددة (3×6م، 6×6م، 6×12م)",
-        },
-        {
-          name: "الهيكل",
-          value: "حديد مجلفن عالي المتانة",
-        },
-        {
-          name: "الجدران",
-          value: "ألواح معزولة قابلة للتخصيص",
-        },
-        {
-          name: "الأرضية",
-          value: "خشب معالج مع سجاد مكتبي",
-        },
-        {
-          name: "الإضاءة",
-          value: "إضاءة مكتبية مريحة للعين",
-        },
-        {
-          name: "التكييف",
-          value: "نظام تدفئة وتبريد فعّال",
-        },
-        {
-          name: "الاتصالات",
-          value: "تمديدات شبكة وإنترنت",
-        },
-        {
-          name: "الأمان",
-          value: "أنظمة إقفال وأمان متطورة",
-        },
+        { name: "النوع", value: "أكشاك حراسة مجهزة" },
+        { name: "الأمان", value: "زجاج مقاوم للكسر وأقفال أمان" },
+        { name: "التجهيزات", value: "تكييف وإضاءة وأنظمة اتصال" }
       ],
       features: [
-        "بيئة عمل مريحة ومهنية",
-        "عزل صوتي وحراري ممتاز",
-        "سهولة النقل والتركيب",
-        "قابلية للتوسع والدمج",
-        "تجهيزات مكتبية كاملة",
-        "تصميم داخلي قابل للتخصيص",
-        "خيارات الطاقة المستدامة",
-        "أنظمة اتصالات وتقنية متكاملة",
-      ],
+        "أمان عالي",
+        "رؤية بانورامية",
+        "مقاوم للطقس",
+        "أنظمة اتصال متطورة"
+      ]
     },
+    "mobile-fixed-restaurants": {
+      title: "مطاعم متنقله وثابته",
+      description: "مطاعم متنقلة وثابتة مجهزة بالكامل بأحدث المعدات لأعمال الطعام.",
+      longDescription: "مطاعمنا المتنقلة والثابتة مصممة لتلبية احتياجات قطاع الأغذية بأعلى المعايير. مجهزة بمطابخ احترافية وأنظمة سلامة غذائية متكاملة.",
+      mainImage: "https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?ixlib=rb-1.2.1&auto=format&fit=crop&w=1267&q=80",
+      images: [
+        "https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?ixlib=rb-1.2.1&auto=format&fit=crop&w=1267&q=80"
+      ],
+      specifications: [
+        { name: "النوع", value: "مطاعم متنقلة وثابتة" },
+        { name: "المطبخ", value: "مجهز بمعدات طبخ احترافية" },
+        { name: "السلامة", value: "أنظمة سلامة غذائية متطورة" }
+      ],
+      features: [
+        "مطبخ احترافي",
+        "أنظمة تهوية متطورة",
+        "سهولة التشغيل",
+        "مطابق لمعايير السلامة"
+      ]
+    },
+    "metal-fences": {
+      title: "اسوار معدنيه",
+      description: "أسوار معدنية قوية ومتينة، مصممة لتوفير الأمان والحماية.",
+      longDescription: "أسوارنا المعدنية مصنوعة من أجود المواد لضمان الحماية والمتانة. متوفرة بتصاميم مختلفة لتناسب جميع الاحتياجات السكنية والتجارية.",
+      mainImage: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+      images: [
+        "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+      ],
+      specifications: [
+        { name: "المادة", value: "حديد مجلفن عالي الجودة" },
+        { name: "الارتفاع", value: "ارتفاعات متنوعة حسب الطلب" },
+        { name: "التشطيب", value: "دهان مقاوم للصدأ" }
+      ],
+      features: [
+        "متانة عالية",
+        "مقاوم للصدأ",
+        "تصاميم متنوعة",
+        "سهولة التركيب"
+      ]
+    },
+    "cars-umbrellas": {
+      title: "مظلات عربيات",
+      description: "مظلات عربيات عملية لحماية المركبات من العوامل الجوية.",
+      longDescription: "مظلات السيارات لدينا توفر حماية فعالة للمركبات من أشعة الشمس والأمطار. مصنوعة من مواد عالية الجودة ومقاومة للعوامل الجوية.",
+      mainImage: "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+      images: [
+        "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+      ],
+      specifications: [
+        { name: "المادة", value: "قماش مقاوم للماء والشمس" },
+        { name: "الهيكل", value: "معدن مجلفن قوي" },
+        { name: "الحماية", value: "حماية من الأشعة فوق البنفسجية" }
+      ],
+      features: [
+        "حماية كاملة للمركبة",
+        "مقاوم للعوامل الجوية",
+        "تصميم عملي",
+        "سهولة التركيب"
+      ]
+    },
+    "containers": {
+      title: "حاويات",
+      description: "حاويات متعددة الاستخدامات بأحجام مختلفة لتلبية احتياجات التخزين.",
+      longDescription: "حاوياتنا متعددة الاستخدامات وتوفر حلول تخزين مثالية للاستخدامات المختلفة. مصنوعة من مواد عالية الجودة لضمان الحماية والمتانة.",
+      mainImage: "https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+      images: [
+        "https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+      ],
+      specifications: [
+        { name: "الأحجام", value: "أحجام متنوعة حسب الاحتياج" },
+        { name: "المادة", value: "حديد مقوى مقاوم للصدأ" },
+        { name: "الأمان", value: "أقفال أمان متطورة" }
+      ],
+      features: [
+        "مساحة تخزين واسعة",
+        "حماية كاملة للمحتويات",
+        "متانة استثنائية",
+        "سهولة الوصول"
+      ]
+    },
+    "metal-hangars": {
+      title: "هناجر معدنيه",
+      description: "هناجر معدنية واسعة ومتينة، مثالية للتخزين والأنشطة الصناعية.",
+      longDescription: "هناجرنا المعدنية توفر مساحات واسعة ومتينة للاستخدامات الصناعية والتخزين. مصممة لتحمل الأحمال الثقيلة والظروف الجوية القاسية.",
+      mainImage: "https://images.unsplash.com/photo-1587293852726-70cdb56c2866?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+      images: [
+        "https://images.unsplash.com/photo-1587293852726-70cdb56c2866?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+      ],
+      specifications: [
+        { name: "المساحة", value: "مساحات واسعة حسب الطلب" },
+        { name: "الهيكل", value: "هيكل معدني قوي ومتين" },
+        { name: "السقف", value: "سقف معدني مقاوم للتسرب" }
+      ],
+      features: [
+        "مساحات واسعة",
+        "قوة تحمل عالية",
+        "مقاومة للعوامل الجوية",
+        "تصميم صناعي متطور"
+      ]
+    }
   };
 
   const product = productsData[productId as keyof typeof productsData];
@@ -451,9 +366,12 @@ const ProductDetail = () => {
                   فريقنا جاهز للإجابة عن استفساراتك وتقديم عرض سعر مخصص يناسب
                   متطلباتك.
                 </p>
-                <Link to="/#contact" className="gold-button block text-center">
+                <button
+                  onClick={() => window.openPriceOfferModal?.()}
+                  className="gold-button w-full text-center"
+                >
                   طلب عرض سعر
-                </Link>
+                </button>
 
                 <div className="mt-6 pt-6 border-t border-gray-200">
                   <h4 className="font-bold mb-3">تواصل مباشرة</h4>
