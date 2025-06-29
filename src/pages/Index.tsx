@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import Header from "../components/Header";
 import Hero from "../components/Hero";
@@ -14,7 +13,7 @@ import FloatingSocialIcons from "../components/FloatingSocialIcons";
 
 const Index = () => {
   const [isPriceOfferModalOpen, setIsPriceOfferModalOpen] = useState(false);
-  
+
   // Make this function available globally for other components to use
   window.openPriceOfferModal = () => setIsPriceOfferModalOpen(true);
 
@@ -24,16 +23,16 @@ const Index = () => {
       <Hero />
       <About />
       <Products />
-      <SuccessPartners />
+      {/* <SuccessPartners /> */}
       <Gallery />
       <Videos />
       <Contact />
       <Footer />
       <FloatingSocialIcons />
-      
-      <PriceOfferModal 
-        isOpen={isPriceOfferModalOpen} 
-        onClose={() => setIsPriceOfferModalOpen(false)} 
+
+      <PriceOfferModal
+        isOpen={isPriceOfferModalOpen}
+        onClose={() => setIsPriceOfferModalOpen(false)}
       />
     </div>
   );
