@@ -35,7 +35,7 @@ const Header = () => {
     {
       id: "ready-made-homes",
       label: "منازل جاهزه",
-      path: "/products/eady-made-homes",
+      path: "/products/ready-made-homes",
     },
     {
       id: "guard-booths",
@@ -43,9 +43,9 @@ const Header = () => {
       path: "/products/guard-booths",
     },
     {
-      id: "mobile/fixed-restaurants",
+      id: "mobile-fixed-restaurants",
       label: "مطاعم متنقله وثابته",
-      path: "/products/mobile/fixed-restaurants",
+      path: "/products/mobile-fixed-restaurants",
     },
     {
       id: "metal-fences",
