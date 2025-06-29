@@ -9,6 +9,7 @@ import Videos from "../components/Videos";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
 import PriceOfferModal from "../components/PriceOfferModal";
+import FloatingSocialIcons from "../components/FloatingSocialIcons";
 
 const Index = () => {
   const [isPriceOfferModalOpen, setIsPriceOfferModalOpen] = useState(false);
@@ -26,6 +27,7 @@ const Index = () => {
       <Videos />
       <Contact />
       <Footer />
+      <FloatingSocialIcons />
       
       <PriceOfferModal 
         isOpen={isPriceOfferModalOpen} 

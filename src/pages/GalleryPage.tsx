@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { ChevronRight, ChevronLeft, X } from "lucide-react";
@@ -12,15 +13,47 @@ import {
 
 const GalleryPage = () => {
   const [activeImage, setActiveImage] = useState<string | null>(null);
+  const [activeCategory, setActiveCategory] = useState("الكل");
 
   const galleryImages = [
-    "https://images.unsplash.com/photo-1520106212299-d99c443e4568?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-    "https://images.unsplash.com/photo-1600359756098-8bc52195bbf4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-    "https://images.unsplash.com/photo-1566195992011-5f6b21e539aa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-    "https://images.unsplash.com/photo-1520106212299-d99c443e4568?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-    "https://images.unsplash.com/photo-1600359756098-8bc52195bbf4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-    "https://images.unsplash.com/photo-1566195992011-5f6b21e539aa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+    {
+      url: "https://images.unsplash.com/photo-1520106212299-d99c443e4568?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+      category: "كرفانات"
+    },
+    {
+      url: "https://images.unsplash.com/photo-1600359756098-8bc52195bbf4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+      category: "ملاجئ"
+    },
+    {
+      url: "https://images.unsplash.com/photo-1566195992011-5f6b21e539aa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+      category: "عربات طعام"
+    },
+    {
+      url: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+      category: "أكشاك"
+    },
+    {
+      url: "https://images.unsplash.com/photo-1551038247-3d9af20df552?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+      category: "مكاتب متنقلة"
+    },
+    {
+      url: "https://images.unsplash.com/photo-1466442929976-97f336a657be?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+      category: "كرفانات"
+    },
   ];
+
+  const categories = [
+    "الكل",
+    "كرفانات",
+    "ملاجئ",
+    "عربات طعام",
+    "أكشاك",
+    "مكاتب متنقلة",
+  ];
+
+  const filteredImages = activeCategory === "الكل" 
+    ? galleryImages 
+    : galleryImages.filter(image => image.category === activeCategory);
 
   const openLightbox = (image: string) => {
     setActiveImage(image);
@@ -31,15 +64,6 @@ const GalleryPage = () => {
     setActiveImage(null);
     document.body.style.overflow = "auto";
   };
-
-  const categories = [
-    "الكل",
-    "كرفانات",
-    "ملاجئ",
-    "عربات طعام",
-    "أكشاك",
-    "مكاتب متنقلة",
-  ];
 
   return (
     <PageLayout title="معرض الصور">
@@ -56,8 +80,9 @@ const GalleryPage = () => {
             {categories.map((category, index) => (
               <button
                 key={index}
-                className={`px-4 py-2 rounded-full ${
-                  index === 0
+                onClick={() => setActiveCategory(category)}
+                className={`px-4 py-2 rounded-full transition-colors ${
+                  activeCategory === category
                     ? "bg-gold text-white"
                     : "bg-gray-100 hover:bg-gray-200"
                 }`}
@@ -71,17 +96,17 @@ const GalleryPage = () => {
         <div className="max-w-5xl mx-auto">
           <Carousel className="w-full" opts={{ loop: true, direction: "rtl" }}>
             <CarouselContent>
-              {galleryImages.map((image, index) => (
+              {filteredImages.map((image, index) => (
                 <CarouselItem
                   key={index}
                   className="basis-full lg:basis-1/2 xl:basis-1/3"
                 >
                   <div
                     className="h-72 overflow-hidden rounded-lg shadow-md cursor-pointer m-2"
-                    onClick={() => openLightbox(image)}
+                    onClick={() => openLightbox(image.url)}
                   >
                     <img
-                      src={image}
+                      src={image.url}
                       alt={`ME Caravan Gallery ${index + 1}`}
                       className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
                     />
@@ -99,14 +124,14 @@ const GalleryPage = () => {
         </div>
 
         <div className="mt-12 grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-4">
-          {galleryImages.map((image, index) => (
+          {filteredImages.map((image, index) => (
             <div
               key={`thumb-${index}`}
               className="h-32 overflow-hidden rounded-md border border-gray-200 cursor-pointer"
-              onClick={() => openLightbox(image)}
+              onClick={() => openLightbox(image.url)}
             >
               <img
-                src={image}
+                src={image.url}
                 alt={`Thumbnail ${index + 1}`}
                 className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
               />
@@ -139,15 +164,15 @@ const GalleryPage = () => {
         )}
 
         <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2">
-          {galleryImages.map((image, index) => (
+          {filteredImages.map((image, index) => (
             <button
               key={`lightbox-thumb-${index}`}
               className={`w-3 h-3 rounded-full ${
-                activeImage === image ? "bg-gold" : "bg-white bg-opacity-50"
+                activeImage === image.url ? "bg-gold" : "bg-white bg-opacity-50"
               }`}
               onClick={(e) => {
                 e.stopPropagation();
-                setActiveImage(image);
+                setActiveImage(image.url);
               }}
               aria-label={`View image ${index + 1}`}
             />
