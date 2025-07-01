@@ -11,6 +11,18 @@ import {
 } from "@/components/ui/carousel";
 import { ChevronRight, ChevronLeft } from "lucide-react";
 
+import caravanImg from "@/assets/images/caravans/FB_IMG_1739983173454.jpg";
+import carsUmbImg from "@/assets/images/cars-umbrellas/img1.jpeg";
+import containersImg from "@/assets/images/containers/43554592750_15198e52f5_b.jpg";
+import fixedUnitsImg from "@/assets/images/fixed-units/تصميم-كرفانات-من-الداخل.jpeg";
+import guardBoothsImg from "@/assets/images/guard-booths/165471.jpg";
+import metalFencesImg from "@/assets/images/metal-fences/WhatsApp Image 2025-05-26 at 00.38.03_e26779cf.jpg";
+import metalHangersImg from "@/assets/images/metal-hangars/images (22).jpeg";
+import resturantsImg from "@/assets/images/mobile-fixed-restaurants/IMG-20250507-WA0055.jpg";
+import mobileToiletsImg from "@/assets/images/mobile-toilets/FB_IMG_1746288119283.jpg";
+import readyMadeHomeImg from "@/assets/images/ready-made-homes/97557.jpg";
+
+
 const ProductDetail = () => {
   const { productId } = useParams<{ productId: string }>();
 
@@ -20,12 +32,8 @@ const ProductDetail = () => {
       title: "كرفانات",
       description: "كرفانات متنقلة بتصاميم عصرية وجودة عالية، مناسبة للاستخدامات السكنية والتجارية.",
       longDescription: "نقدم تشكيلة واسعة من الكرفانات المتنقلة المصممة وفقاً لأعلى معايير الجودة والسلامة. تتميز كرفاناتنا بتصاميم عصرية مريحة وعملية، مع إمكانية التخصيص حسب احتياجات العميل.",
-      mainImage: "https://images.unsplash.com/photo-1563783850023-077d97825802?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      images: [
-        "https://images.unsplash.com/photo-1563783850023-077d97825802?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "https://images.unsplash.com/photo-1513311068348-19c8fbdc0bb6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "https://images.unsplash.com/photo-1652946336807-bd35785ef268?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-      ],
+      mainImage: caravanImg, 
+      images: [caravanImg],
       specifications: [
         { name: "الأبعاد", value: "متعددة الخيارات (3×6م، 3×9م، 3×12م)" },
         { name: "الهيكل", value: "حديد مجلفن مقاوم للصدأ" },
@@ -43,11 +51,8 @@ const ProductDetail = () => {
       title: "وحدات ثابته",
       description: "وحدات ثابتة مصممة بأعلى معايير الجودة لتوفير حلول متكاملة ومريحة.",
       longDescription: "وحداتنا الثابتة مصممة لتوفير حلول دائمة وموثوقة للاستخدامات المختلفة. تتميز بالمتانة والجودة العالية مع تصاميم حديثة تناسب مختلف الاحتياجات.",
-      mainImage: "https://images.unsplash.com/photo-1531973486364-5fa64260d75b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-      images: [
-        "https://images.unsplash.com/photo-1531973486364-5fa64260d75b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-        "https://images.unsplash.com/photo-1513311068348-19c8fbdc0bb6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-      ],
+      mainImage: fixedUnitsImg,
+      images: [fixedUnitsImg],
       specifications: [
         { name: "النوع", value: "وحدات ثابتة متعددة الاستخدامات" },
         { name: "المواد", value: "مواد عالية الجودة ومقاومة للعوامل الجوية" },
@@ -64,10 +69,8 @@ const ProductDetail = () => {
       title: "حمامات متنقله",
       description: "حمامات متنقلة عملية ونظيفة، مصممة لتلبية احتياجات المواقع المختلفة.",
       longDescription: "حماماتنا المتنقلة مصممة لتوفير حلول صحية مريحة ونظيفة للمواقع المؤقتة والفعاليات. تتميز بسهولة النقل والتركيب مع الحفاظ على أعلى معايير النظافة.",
-      mainImage: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-      images: [
-        "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-      ],
+      mainImage: mobileToiletsImg, 
+      images: [mobileToiletsImg],
       specifications: [
         { name: "النوع", value: "حمامات متنقلة مجهزة بالكامل" },
         { name: "المرافق", value: "مرحاض وحوض غسيل ومرآة" },
@@ -84,10 +87,8 @@ const ProductDetail = () => {
       title: "منازل جاهزه",
       description: "منازل جاهزة بتصاميم حديثة وتجهيزات كاملة، جاهزة للسكن الفوري.",
       longDescription: "منازلنا الجاهزة توفر حلول سكن سريعة وعالية الجودة. مصممة بأحدث التقنيات وتأتي مجهزة بالكامل لتوفير الراحة والأمان لسكانها.",
-      mainImage: "https://images.unsplash.com/photo-1513694203232-719a280e022f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-      images: [
-        "https://images.unsplash.com/photo-1513694203232-719a280e022f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-      ],
+      mainImage: readyMadeHomeImg,
+      images: [readyMadeHomeImg],
       specifications: [
         { name: "النوع", value: "منازل جاهزة للسكن" },
         { name: "المساحة", value: "مساحات متنوعة حسب الطلب" },
@@ -104,10 +105,7 @@ const ProductDetail = () => {
       title: "اكشاك حراسه",
       description: "أكشاك حراسة مجهزة بأنظمة أمان متطورة لضمان الحماية الفعالة.",
       longDescription: "أكشاك الحراسة لدينا مصممة لتوفير بيئة عمل مريحة وآمنة لموظفي الأمن. مجهزة بأحدث التقنيات وأنظمة المراقبة للحصول على أقصى درجات الحماية.",
-      mainImage: "https://images.unsplash.com/photo-1531968455001-5c5272a41129?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-      images: [
-        "https://images.unsplash.com/photo-1531968455001-5c5272a41129?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-      ],
+      mainImage: guardBoothsImg, images: [guardBoothsImg],
       specifications: [
         { name: "النوع", value: "أكشاك حراسة مجهزة" },
         { name: "الأمان", value: "زجاج مقاوم للكسر وأقفال أمان" },
@@ -124,10 +122,7 @@ const ProductDetail = () => {
       title: "مطاعم متنقله وثابته",
       description: "مطاعم متنقلة وثابتة مجهزة بالكامل بأحدث المعدات لأعمال الطعام.",
       longDescription: "مطاعمنا المتنقلة والثابتة مصممة لتلبية احتياجات قطاع الأغذية بأعلى المعايير. مجهزة بمطابخ احترافية وأنظمة سلامة غذائية متكاملة.",
-      mainImage: "https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?ixlib=rb-1.2.1&auto=format&fit=crop&w=1267&q=80",
-      images: [
-        "https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?ixlib=rb-1.2.1&auto=format&fit=crop&w=1267&q=80"
-      ],
+      mainImage: resturantsImg, images: [resturantsImg],
       specifications: [
         { name: "النوع", value: "مطاعم متنقلة وثابتة" },
         { name: "المطبخ", value: "مجهز بمعدات طبخ احترافية" },
@@ -144,10 +139,8 @@ const ProductDetail = () => {
       title: "اسوار معدنيه",
       description: "أسوار معدنية قوية ومتينة، مصممة لتوفير الأمان والحماية.",
       longDescription: "أسوارنا المعدنية مصنوعة من أجود المواد لضمان الحماية والمتانة. متوفرة بتصاميم مختلفة لتناسب جميع الاحتياجات السكنية والتجارية.",
-      mainImage: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-      images: [
-        "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-      ],
+      mainImage: metalFencesImg,
+      images: [metalFencesImg],
       specifications: [
         { name: "المادة", value: "حديد مجلفن عالي الجودة" },
         { name: "الارتفاع", value: "ارتفاعات متنوعة حسب الطلب" },
@@ -164,10 +157,8 @@ const ProductDetail = () => {
       title: "مظلات عربيات",
       description: "مظلات عربيات عملية لحماية المركبات من العوامل الجوية.",
       longDescription: "مظلات السيارات لدينا توفر حماية فعالة للمركبات من أشعة الشمس والأمطار. مصنوعة من مواد عالية الجودة ومقاومة للعوامل الجوية.",
-      mainImage: "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-      images: [
-        "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-      ],
+      mainImage: carsUmbImg,
+      images: [carsUmbImg],
       specifications: [
         { name: "المادة", value: "قماش مقاوم للماء والشمس" },
         { name: "الهيكل", value: "معدن مجلفن قوي" },
@@ -184,10 +175,8 @@ const ProductDetail = () => {
       title: "حاويات",
       description: "حاويات متعددة الاستخدامات بأحجام مختلفة لتلبية احتياجات التخزين.",
       longDescription: "حاوياتنا متعددة الاستخدامات وتوفر حلول تخزين مثالية للاستخدامات المختلفة. مصنوعة من مواد عالية الجودة لضمان الحماية والمتانة.",
-      mainImage: "https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-      images: [
-        "https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-      ],
+      mainImage: containersImg,
+      images: [containersImg],
       specifications: [
         { name: "الأحجام", value: "أحجام متنوعة حسب الاحتياج" },
         { name: "المادة", value: "حديد مقوى مقاوم للصدأ" },
@@ -204,10 +193,8 @@ const ProductDetail = () => {
       title: "هناجر معدنيه",
       description: "هناجر معدنية واسعة ومتينة، مثالية للتخزين والأنشطة الصناعية.",
       longDescription: "هناجرنا المعدنية توفر مساحات واسعة ومتينة للاستخدامات الصناعية والتخزين. مصممة لتحمل الأحمال الثقيلة والظروف الجوية القاسية.",
-      mainImage: "https://images.unsplash.com/photo-1587293852726-70cdb56c2866?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-      images: [
-        "https://images.unsplash.com/photo-1587293852726-70cdb56c2866?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-      ],
+      mainImage: metalHangersImg,
+      images: [metalHangersImg],
       specifications: [
         { name: "المساحة", value: "مساحات واسعة حسب الطلب" },
         { name: "الهيكل", value: "هيكل معدني قوي ومتين" },
@@ -284,7 +271,7 @@ const ProductDetail = () => {
                           <img
                             src={image}
                             alt={`${product.title} - صورة ${index + 1}`}
-                            className="w-full h-full object-cover"
+                            className="w-full h-full object-contain object-center"
                           />
                         </div>
                       </CarouselItem>
