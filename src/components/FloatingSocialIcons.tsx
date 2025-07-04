@@ -1,17 +1,17 @@
-
 import { Facebook, Instagram, Twitter } from "lucide-react";
 
 const FloatingSocialIcons = () => {
   return (
     <div className="fixed bottom-6 right-6 z-40 flex flex-col space-y-3">
       <a
-        href="#"
+        href="https://www.facebook.com/profile.php?id=61576585716044"
         className="bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110"
         aria-label="Facebook"
+        target="_blank"
       >
         <Facebook className="w-5 h-5" />
       </a>
-      <a
+      {/* <a
         href="#"
         className="bg-pink-600 hover:bg-pink-700 text-white p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110"
         aria-label="Instagram"
@@ -24,7 +24,7 @@ const FloatingSocialIcons = () => {
         aria-label="Twitter"
       >
         <Twitter className="w-5 h-5" />
-      </a>
+      </a> */}
     </div>
   );
 };

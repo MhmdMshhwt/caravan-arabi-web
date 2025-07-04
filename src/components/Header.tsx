@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { ChevronDown } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
-import logo1Image from "@/assets/images/logo/logo3-removebg-preview.png";
+import logo1Image from "@/assets/images/logo/logo2 (2).jpeg";
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -78,9 +78,9 @@ const Header = () => {
       path: "/#products",
       hasDropdown: true,
     },
-    { id: "projects", label: "مشاريعنا", path: "/projects" },
+    // { id: "projects", label: "مشاريعنا", path: "/projects" },
     { id: "gallery", label: "المعرض", path: "/gallery" },
-    { id: "videos", label: "فيديوهات", path: "/videos" },
+    // { id: "videos", label: "فيديوهات", path: "/videos" },
     { id: "contact", label: "تواصل معنا", path: "/contact" },
   ];
 
@@ -97,7 +97,7 @@ const Header = () => {
           <img
             src={logo1Image}
             alt="ME Caravan Logo"
-            className="h-10 md:h-20 w-auto"
+            className="h-12 md:h-16 w-auto"
           />
         </Link>
 

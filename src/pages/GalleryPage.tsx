@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { ChevronRight, ChevronLeft, X } from "lucide-react";
@@ -11,49 +10,77 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 
+import caravanImg from "@/assets/images/caravans/FB_IMG_1739983173454.jpg";
+import carsUmbImg from "@/assets/images/cars-umbrellas/img1.jpeg";
+import containersImg from "@/assets/images/containers/43554592750_15198e52f5_b.jpg";
+import fixedUnitsImg from "@/assets/images/fixed-units/تصميم-كرفانات-من-الداخل.jpeg";
+import guardBoothsImg from "@/assets/images/guard-booths/165471.jpg";
+import metalFencesImg from "@/assets/images/metal-fences/WhatsApp Image 2025-05-26 at 00.38.03_e26779cf.jpg";
+import metalHangersImg from "@/assets/images/metal-hangars/images (22).jpeg";
+import resturantsImg from "@/assets/images/mobile-fixed-restaurants/IMG-20250507-WA0055.jpg";
+import mobileToiletsImg from "@/assets/images/mobile-toilets/FB_IMG_1746288119283.jpg";
+import readyMadeHomeImg from "@/assets/images/ready-made-homes/97557.jpg";
+
 const GalleryPage = () => {
   const [activeImage, setActiveImage] = useState<string | null>(null);
   const [activeCategory, setActiveCategory] = useState("الكل");
 
   const galleryImages = [
     {
-      url: "https://images.unsplash.com/photo-1520106212299-d99c443e4568?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-      category: "كرفانات"
+      url: caravanImg,
+      category: "كرفانات",
     },
     {
-      url: "https://images.unsplash.com/photo-1600359756098-8bc52195bbf4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-      category: "ملاجئ"
+      url: carsUmbImg,
+      category: "ملاجئ",
     },
     {
-      url: "https://images.unsplash.com/photo-1566195992011-5f6b21e539aa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-      category: "عربات طعام"
+      url: containersImg,
+      category: "عربات طعام",
     },
     {
-      url: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-      category: "أكشاك"
+      url: fixedUnitsImg,
+      category: "أكشاك",
     },
     {
-      url: "https://images.unsplash.com/photo-1551038247-3d9af20df552?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-      category: "مكاتب متنقلة"
+      url: guardBoothsImg,
+      category: "مكاتب متنقلة",
     },
     {
-      url: "https://images.unsplash.com/photo-1466442929976-97f336a657be?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-      category: "كرفانات"
+      url: metalFencesImg,
+      category: "كرفانات",
+    },
+    {
+      url: metalHangersImg,
+      category: "كرفانات",
+    },
+    {
+      url: resturantsImg,
+      category: "كرفانات",
+    },
+    {
+      url: mobileToiletsImg,
+      category: "كرفانات",
+    },
+    {
+      url: readyMadeHomeImg,
+      category: "كرفانات",
     },
   ];
 
   const categories = [
     "الكل",
-    "كرفانات",
-    "ملاجئ",
-    "عربات طعام",
-    "أكشاك",
-    "مكاتب متنقلة",
+    // "كرفانات",
+    // "ملاجئ",
+    // "عربات طعام",
+    // "أكشاك",
+    // "مكاتب متنقلة",
   ];
 
-  const filteredImages = activeCategory === "الكل" 
-    ? galleryImages 
-    : galleryImages.filter(image => image.category === activeCategory);
+  const filteredImages =
+    activeCategory === "الكل"
+      ? galleryImages
+      : galleryImages.filter((image) => image.category === activeCategory);
 
   const openLightbox = (image: string) => {
     setActiveImage(image);

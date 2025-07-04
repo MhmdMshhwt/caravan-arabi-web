@@ -1,4 +1,5 @@
 import PageLayout from "@/components/PageLayout";
+import aboutImage from "@/assets/images/about-photo.avif";
 
 const AboutUs = () => {
   return (
@@ -7,7 +8,7 @@ const AboutUs = () => {
         <div className="flex flex-col lg:flex-row items-center gap-8">
           <div className="lg:w-1/2">
             <img
-              src="https://plus.unsplash.com/premium_photo-1663090226912-511b20a3f8a3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              src={aboutImage}
               alt="ME Caravan Team"
               className="rounded-lg shadow-lg w-full"
             />
@@ -15,22 +16,21 @@ const AboutUs = () => {
 
           <div className="lg:w-1/2">
             <h3 className="text-2xl font-bold mb-4">
-              شركة رائدة في تصنيع العربات المتنقلة
+              كرفان النيل… خبرة تتكلم وجودة تُشاهد.
             </h3>
             <p className="mb-4 text-lg">
-              شركة ME Caravan هي شركة متخصصة في تصنيع وتوريد العربات المتنقلة
-              بمختلف أنواعها وأحجامها، تأسست الشركة عام 2010 على يد مجموعة من
-              المهندسين ذوي الخبرة والكفاءة العالية.
+              بخبرة تمتد لأكثر من 20 عامًا، أصبحنا الاسم الأول في عالم الكرفانات
+              والمباني سابقة التجهيز داخل مصر وخارجها. نُصمم ونُصنّع حلولًا ذكية
+              تلبي كل الاحتياجات — من كرفانات متنقلة ومكاتب إدارية إلى هناجر
+              صناعية وكبائن أمنية — وكل ذلك باستخدام مواد عالية الجودة وتقنيات
+              حديثة تضمن لك المتانة وسهولة التركيب وسرعة التنفيذ.
             </p>
             <p className="mb-4 text-lg">
-              نحن نفتخر بتقديم منتجات ذات جودة عالية تلبي احتياجات عملائنا في
-              مختلف القطاعات، سواء كانت للاستخدامات التجارية أو السكنية أو
-              الترفيهية.
+              في كرفان النيل، لا نقدم منتجًا فقط... بل نبني راحة، نخلق حلولًا،
+              ونُحقق طموحات.
             </p>
             <p className="mb-4 text-lg">
-              تتميز منتجاتنا بالمتانة والجودة العالية والتصميم المبتكر، كما نقدم
-              خدمات ما بعد البيع لضمان رضا العملاء ومساعدتهم في الحصول على أفضل
-              استفادة من منتجاتنا.
+              اختاركرفان النيل، وخلّي مشروعك يبدأ من المكان الصح.
             </p>
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
@@ -62,9 +62,9 @@ const AboutUs = () => {
             <div className="text-center p-6 bg-white rounded-lg shadow-md">
               <h4 className="text-xl font-bold mb-3 text-gold">رؤيتنا</h4>
               <p>
-                أن نكون الرواد في مجال تصنيع وتوريد العربات المتنقلة في المملكة
-                العربية السعودية والشرق الأوسط، من خلال تقديم منتجات مبتكرة
-                وعالية الجودة تلبي احتياجات العملاء وتتجاوز توقعاتهم.
+                أن نكون الرواد في مجال تصنيع وتوريد العربات المتنقلة في مصر
+                والشرق الأوسط، من خلال تقديم منتجات مبتكرة وعالية الجودة تلبي
+                احتياجات العملاء وتتجاوز توقعاتهم.
               </p>
             </div>
             <div className="text-center p-6 bg-white rounded-lg shadow-md">
@@ -78,7 +78,7 @@ const AboutUs = () => {
           </div>
         </div>
 
-        <div className="mt-16">
+        {/* <div className="mt-16">
           <h3 className="text-2xl font-bold mb-8 text-center">فريق العمل</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="text-center">
@@ -115,7 +115,7 @@ const AboutUs = () => {
               <p className="text-gold">رئيس قسم التصميم</p>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </PageLayout>
   );

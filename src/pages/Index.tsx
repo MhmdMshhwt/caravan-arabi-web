@@ -3,9 +3,7 @@ import Header from "../components/Header";
 import Hero from "../components/Hero";
 import About from "../components/About";
 import Products from "../components/Products";
-import SuccessPartners from "../components/SuccessPartners";
 import Gallery from "../components/Gallery";
-import Videos from "../components/Videos";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
 import PriceOfferModal from "../components/PriceOfferModal";
@@ -25,7 +23,7 @@ const Index = () => {
       <Products />
       {/* <SuccessPartners /> */}
       <Gallery />
-      <Videos />
+      {/* <Videos /> */}
       <Contact />
       <Footer />
       <FloatingSocialIcons />

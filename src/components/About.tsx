@@ -1,3 +1,5 @@
+import aboutImage from "@/assets/images/about-photo.avif";
+
 const About = () => {
   return (
     <section id="about" className="section-padding bg-white">
@@ -10,7 +12,7 @@ const About = () => {
         <div className="flex flex-col lg:flex-row items-center gap-8">
           <div className="lg:w-1/2">
             <img
-              src="https://plus.unsplash.com/premium_photo-1663090226912-511b20a3f8a3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              src={aboutImage}
               alt="ME Caravan Team"
               className="rounded-lg shadow-lg"
             />

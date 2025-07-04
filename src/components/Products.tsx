@@ -1,5 +1,15 @@
-
 import { Link } from "react-router-dom";
+
+import caravanImg from "@/assets/images/caravans/FB_IMG_1739983173454.jpg";
+import carsUmbImg from "@/assets/images/cars-umbrellas/img1.jpeg";
+import containersImg from "@/assets/images/containers/43554592750_15198e52f5_b.jpg";
+import fixedUnitsImg from "@/assets/images/fixed-units/تصميم-كرفانات-من-الداخل.jpeg";
+import guardBoothsImg from "@/assets/images/guard-booths/165471.jpg";
+import metalFencesImg from "@/assets/images/metal-fences/WhatsApp Image 2025-05-26 at 00.38.03_e26779cf.jpg";
+import metalHangersImg from "@/assets/images/metal-hangars/images (22).jpeg";
+import resturantsImg from "@/assets/images/mobile-fixed-restaurants/IMG-20250507-WA0055.jpg";
+import mobileToiletsImg from "@/assets/images/mobile-toilets/FB_IMG_1746288119283.jpg";
+import readyMadeHomeImg from "@/assets/images/ready-made-homes/97557.jpg";
 
 const Products = () => {
   const products = [
@@ -9,8 +19,7 @@ const Products = () => {
       categoryId: "caravans",
       description:
         "كرفانات متنقلة بتصاميم عصرية وجودة عالية، مناسبة للاستخدامات السكنية والتجارية",
-      image:
-        "https://images.unsplash.com/photo-1563783850023-077d97825802?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      image: caravanImg,
     },
     {
       id: 2,
@@ -18,8 +27,7 @@ const Products = () => {
       categoryId: "fixed-units",
       description:
         "وحدات ثابتة مصممة بأعلى معايير الجودة لتوفير حلول متكاملة ومريحة",
-      image:
-        "https://images.unsplash.com/photo-1531973486364-5fa64260d75b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+      image: fixedUnitsImg,
     },
     {
       id: 3,
@@ -27,8 +35,7 @@ const Products = () => {
       categoryId: "mobile-toilets",
       description:
         "حمامات متنقلة عملية ونظيفة، مصممة لتلبية احتياجات المواقع المختلفة",
-      image:
-        "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+      image: mobileToiletsImg,
     },
     {
       id: 4,
@@ -36,17 +43,14 @@ const Products = () => {
       categoryId: "ready-made-homes",
       description:
         "منازل جاهزة بتصاميم حديثة وتجهيزات كاملة، جاهزة للسكن الفوري",
-      image:
-        "https://images.unsplash.com/photo-1513694203232-719a280e022f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+      image: readyMadeHomeImg,
     },
     {
       id: 5,
       name: "اكشاك حراسه",
       categoryId: "guard-booths",
-      description:
-        "أكشاك حراسة مجهزة بأنظمة أمان متطورة لضمان الحماية الفعالة",
-      image:
-        "https://images.unsplash.com/photo-1531968455001-5c5272a41129?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+      description: "أكشاك حراسة مجهزة بأنظمة أمان متطورة لضمان الحماية الفعالة",
+      image: guardBoothsImg,
     },
     {
       id: 6,
@@ -54,26 +58,21 @@ const Products = () => {
       categoryId: "mobile-fixed-restaurants",
       description:
         "مطاعم متنقلة وثابتة مجهزة بالكامل بأحدث المعدات لأعمال الطعام",
-      image:
-        "https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?ixlib=rb-1.2.1&auto=format&fit=crop&w=1267&q=80",
+      image: resturantsImg,
     },
     {
       id: 7,
       name: "اسوار معدنيه",
       categoryId: "metal-fences",
-      description:
-        "أسوار معدنية قوية ومتينة، مصممة لتوفير الأمان والحماية",
-      image:
-        "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+      description: "أسوار معدنية قوية ومتينة، مصممة لتوفير الأمان والحماية",
+      image: metalFencesImg,
     },
     {
       id: 8,
       name: "مظلات عربيات",
       categoryId: "cars-umbrellas",
-      description:
-        "مظلات عربيات عملية لحماية المركبات من العوامل الجوية",
-      image:
-        "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+      description: "مظلات عربيات عملية لحماية المركبات من العوامل الجوية",
+      image: carsUmbImg,
     },
     {
       id: 9,
@@ -81,8 +80,7 @@ const Products = () => {
       categoryId: "containers",
       description:
         "حاويات متعددة الاستخدامات بأحجام مختلفة لتلبية احتياجات التخزين",
-      image:
-        "https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+      image: containersImg,
     },
     {
       id: 10,
@@ -90,8 +88,7 @@ const Products = () => {
       categoryId: "metal-hangars",
       description:
         "هناجر معدنية واسعة ومتينة، مثالية للتخزين والأنشطة الصناعية",
-      image:
-        "https://images.unsplash.com/photo-1587293852726-70cdb56c2866?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+      image: metalHangersImg,
     },
   ];
 
